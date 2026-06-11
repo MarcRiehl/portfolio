@@ -6,11 +6,12 @@ import { SkillSet } from './components/skill-set/skill-set';
 import { FeaturedProjects } from './components/featured-projects/featured-projects';
 import { Feed } from './components/feed/feed';
 import { Contact } from './components/contact/contact';
-import { Footer } from './components/footer/footer';
+import { Footer } from './layout/footer/footer';
+import { TopMenu } from './layout/top-menu/top-menu';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, AboutMe, SkillSet, FeaturedProjects, Feed, Contact, Footer],
+  imports: [RouterOutlet, Header, AboutMe, SkillSet, FeaturedProjects, Feed, Contact, Footer, TopMenu],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
