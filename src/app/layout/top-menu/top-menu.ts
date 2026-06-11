@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './top-menu.html',
   styleUrl: './top-menu.scss',
 })
+
 export class TopMenu {
   scrollToSection(id: string) {
+  // console.log('Scroll zu:', id);
   document.getElementById(id)?.scrollIntoView({
-    behavior: 'smooth'
+    behavior: 'smooth',
+    block: 'start',
+    inline: 'nearest'
   });
 }
 }

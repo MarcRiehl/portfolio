@@ -6,5 +6,11 @@ export const routes: Routes = [
         path: "",
         component: MainPage,
         title: 'Main Page'
+    },
+    {
+        path: "**",
+        component: MainPage,
+        title: 'Main Page'
     }
+
 ];

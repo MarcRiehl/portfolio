@@ -1,7 +1,6 @@
 header {
 width: 100%;
 background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
-
 }
 
 .top-menu {
@@ -12,4 +11,12 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84
     max-width: 1440px;
     margin: 0 auto;
     color: #FFF;
+}
+
+.top-menu-left{
+    display: flex;
+}
+.top-menu-left > div{
+    padding-right: 10px;
+    cursor: pointer;
 }
