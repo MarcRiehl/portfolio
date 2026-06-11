@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use './scss/abstract/' as *; // Global access to variables/mixins
+@use './scss/base/' as base; // Namespaced access
+@use './scss/components' as comp;
+@use './scss/layout' as layout;
+
