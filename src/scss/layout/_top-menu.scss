@@ -1,6 +1,8 @@
+@use '../abstract/' as *;
+
 header {
-width: 100%;
-background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
 }
 
 .top-menu {
@@ -10,13 +12,28 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84
     align-items: center;
     max-width: 1440px;
     margin: 0 auto;
-    color: #FFF;
+
 }
 
-.top-menu-left{
+.top-menu-left {
     display: flex;
+    align-items: center;
 }
-.top-menu-left > div{
+
+.link-top-menu {
     padding-right: 10px;
     cursor: pointer;
+    color: $primary-color;
+}
+
+.link-top-menu:hover {
+    color: $secondary-color;
+}
+
+.link-language-switch{
+padding-right: 10px;
+}
+
+.logo{
+    width: 120px;
 }

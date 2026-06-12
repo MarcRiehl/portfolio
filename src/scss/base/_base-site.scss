@@ -1,3 +1,5 @@
+@use '../abstract/' as *;
+
 html {
     scroll-behavior: smooth;
 }
@@ -9,7 +11,7 @@ html {
 }
 
 body {
-    background-color: aqua;
+    background-color: $primary-bg-color;
 }
 
 .wrapper-header {
@@ -48,3 +50,9 @@ footer {
     justify-content: center;
 }
 
+h1{
+    font-family: Karla;
+    font-size: 128px;
+    font-weight: bold;
+    color: $tertiary-color;
+}
