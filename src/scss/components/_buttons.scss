@@ -1,0 +1,55 @@
+@use '../abstract/' as *;
+
+.button {
+    &__default {
+        overflow: hidden;
+        color: $primary-color;
+        font-family: Karla;
+        font-size: 18px;
+        line-height: 120%;
+        width: 100px;
+        border-radius: 100px;
+        border: 1px solid $primary-color;
+        background-color: transparent;
+        padding: 10px 24px 10px 24px;
+        height: 48px;
+        width: auto;
+        cursor: pointer;
+
+        span {
+            display: inline-block;
+
+        }
+
+        &:hover span {
+            animation: text-loop 1.8s ease-out infinite;
+        }
+
+        &:hover {
+            border: 1px solid $secondary-color;
+            color: $secondary-color;
+        }
+    }
+}
+
+@keyframes text-loop {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    45% {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+
+    46% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

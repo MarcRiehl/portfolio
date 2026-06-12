@@ -1,14 +1,155 @@
+@use '../abstract/' as *;
+
 .header-content {
     max-width: 1440px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
     color: #FFF;
     margin: 0 auto;
+    height: calc(100dvh - 98px);
+
 }
-                 
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+}
+
 .header-subline {
     font-weight: 400;
     font-size: 40px;
     text-align: center;
+}
+
+.headline-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.header-left {
+
+    justify-self: start;
+}
+
+.header-right {
+    justify-self: end;
+
+}
+
+.header-left-content {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.mouse-arrow {
+    height: 12px;
+    width: auto;
+
+}
+
+.header-left-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 48px;
+    border-radius: 32px;
+    border: 1px solid $secondary-color;
+
+    span {
+        display: inline-block;
+        animation: arrow-loop 1.5s linear infinite;
+    }
+}
+
+@keyframes arrow-loop {
+    0% {
+        transform: translateY(-20%);
+        opacity: 1;
+    }
+
+
+    50% {
+        transform: translateY(70%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20%);
+        opacity: 1;
+    }
+}
+
+.header-left-stroke {
+    height: 240px;
+    border-left: 1px solid $secondary-color;
+
+}
+
+.header-right-content {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-logo-github {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: url('/assets/img/header/logo-github.svg') center center / cover no-repeat;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: -14px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6.4px;
+        height: 6.4px;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+}
+
+.header-logo-github:hover {
+    background: url('/assets/img/header/logo-github-hover.svg') center center / cover no-repeat;
+}
+
+.header-right-stroke {
+    height: 186px;
+    border-left: 1px solid $primary-color;
+
+}
+
+.header-right-mail {
+    transform: rotate(-90deg);
+    width: 0;
+    margin-bottom: -15px;
+}
+
+.header-right-mail a {
+    color: $primary-color;
+    text-decoration: none;
+    padding: 0;
+}
+
+.header-right-mail a:hover {
+    color: $secondary-color;
 }
