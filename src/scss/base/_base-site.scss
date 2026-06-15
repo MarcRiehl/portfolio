@@ -33,8 +33,15 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+
+.wrapper-inline {
+    &__height100 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100dvh;
+    }
 }
 
 .wrapper-footer {
@@ -50,7 +57,7 @@ footer {
     justify-content: center;
 }
 
-h1{
+h1 {
     font-family: Karla;
     font-size: 128px;
     font-weight: bold;

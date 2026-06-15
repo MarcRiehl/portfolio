@@ -3,11 +3,11 @@
     <div class="slider-inner">
       <div class="slider-track">
         @for (text of texts; track $index) {
-          <span>{{ text }} ●</span>
+          <span>{{ text }}</span><span>●</span>
         }
 
         @for (text of texts; track $index) {
-          <span></span><span>{{ text }} ●</span>
+          <span>{{ text }}</span><span>●</span>
         }
       </div>
     </div>

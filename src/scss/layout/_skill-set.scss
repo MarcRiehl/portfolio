@@ -1,0 +1,16 @@
+@use '../abstract/' as *;
+
+.inner-box-subline {
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 24px;
+    color: $primary-color;
+
+    span {
+        font-weight: bold;
+        font-size: 24px;
+        padding-bottom: 24px;
+        color: $secondary-color;
+
+    }
+}
