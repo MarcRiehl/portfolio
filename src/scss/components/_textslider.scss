@@ -1,0 +1,48 @@
+@use '../abstract/' as *;
+
+.slider-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // filter: blur(5.3px);
+}
+
+.slider {
+    overflow: hidden;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 12px 32px;
+    transform: translateY(-50px) rotate(-3deg);
+}
+
+.slider-inner {
+    transform-origin: center;
+}
+
+.slider-track {
+
+    flex-wrap: nowrap;
+    width: max-content;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+}
+
+.slider-track span {
+    font-size: 32px;
+    font-weight: 400;
+    font-family: Karla;
+    line-height: 120%;
+    color: $secondary-color;
+    padding-right: 56px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

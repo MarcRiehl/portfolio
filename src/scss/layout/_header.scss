@@ -153,3 +153,12 @@
 .header-right-mail a:hover {
     color: $secondary-color;
 }
+@media (min-width: 1921px){
+    .header-left-stroke {
+    height: 514px;
+    }
+
+    .header-right-stroke {
+        height: 461px;
+    }
+}

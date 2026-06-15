@@ -8,6 +8,8 @@ import { Contact } from '../contact/contact';
 import { Footer } from '../../layout/footer/footer';
 import { TopMenu } from '../../layout/top-menu/top-menu';
 
+
+
 @Component({
   selector: 'app-main-page',
   imports: [Header, AboutMe, SkillSet, FeaturedProjects, Feed, Contact, Footer, TopMenu],

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import {Textslider} from '../textslider/textslider';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [Textslider],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
