@@ -36,6 +36,11 @@ body {
 }
 
 .wrapper-inline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      
+
     &__height100 {
         display: flex;
         justify-content: space-between;

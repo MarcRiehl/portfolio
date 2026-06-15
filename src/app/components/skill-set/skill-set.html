@@ -20,7 +20,15 @@
                 </div>
             </div>
         </div>
+        <div class="skills-container">
         <div class="skill-box">
+            @for (skill of skills; track $index) {
+            <div class="skill-description">
+                <img class="skill-icon-img" src="{{skill.img}}" alt="" />
+                <div class="skill-name">{{skill.name}}</div>
+            </div>
+            }
+        </div>
         </div>
     </div>
 </section>
