@@ -21,19 +21,20 @@ header {
 }
 
 .link-top-menu {
-    padding-right: 10px;
+    padding-right: 20px;
     cursor: pointer;
     color: $primary-color;
+    font-size: 20px;
 }
 
 .link-top-menu:hover {
     color: $secondary-color;
 }
 
-.link-language-switch{
-padding-right: 10px;
+.link-language-switch {
+    padding-right: 20px;
 }
 
-.logo{
+.logo {
     width: 120px;
 }

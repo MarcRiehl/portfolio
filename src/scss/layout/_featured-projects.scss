@@ -1,0 +1,110 @@
+@use '../abstract/' as *;
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.project-list {
+    width: 50%;
+
+}
+
+.wrapper-project-list-technologie{
+    display: flex;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 24px;
+    border-top: 1px solid $secondary-color;
+    border-bottom: 1px solid $secondary-color;
+    transition: 0.3s ease-in;
+
+    &:hover {
+        background-color: rgba(61, 207, 182, 0.3);
+    }
+}
+
+.project-preview {
+    width: 40%;
+    min-height: 400px;
+    position: relative;
+
+    img {
+        width: 296px;
+        height: auto;
+        animation: fadeIn .3s ease-in;
+        border-radius: 16px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        width: 293px;
+        height: 192px;
+        border-radius: 16px;
+        background: url('/assets/img/projects/img-background-hover.svg') center center / cover no-repeat;
+        opacity: 0;
+        transition: opacity 0.2s ease-in;
+        z-index: -1; // hinter dem Bild
+    }
+
+    &.has-preview::after {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+
+    }
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+    }
+}
+
+.project-list-titel {
+    font-weight: bold;
+    font-size: 24px;
+    color: $primary-color;
+    line-height: 120%;
+}
+
+.product-list-technologie {
+    color: $primary-color;
+    font-size: 18px;
+
+    &:not(:last-child)::after {
+        content: ' | ';
+        margin: 0 8px;
+        color: $secondary-color;
+    }
+}

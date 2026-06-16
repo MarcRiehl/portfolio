@@ -1,0 +1,37 @@
+<dialog #dialog class="project-dialog" (close)="onDialogClose()" >
+
+    <button class="close-btn" (click)="closeDialog()">
+        ✕
+    </button>
+    <div class="dialog-wrapper-inner">
+        <div class="dialog-left">
+            <h2 class="dialog-id">{{project.id}}</h2>
+            <h2 class="dialog-title">{{ project.title }}</h2>
+            <div class="dialog-subline">What is this project about?</div>
+            <div class="dialog-description">{{ project.description }}</div>
+            <div class="dialog-technologies">
+                    @for(tech of project.technologies; track tech.name) {
+                    <div class="dialog-list-technologie">{{ tech.name }}</div>
+                    }
+            </div>
+            <div class="dialog-buttons">
+
+            </div>        
+        </div>
+        <div class="dialog-img">
+            <img [src]="project.previewImage">
+        </div>
+    </div>
+    <div class="navigation">
+
+        <button type="button" (click)="previous.emit()">
+            ←
+        </button>
+
+        <button type="button" (click)="next.emit()">
+            →
+        </button>
+
+    </div>
+
+</dialog>

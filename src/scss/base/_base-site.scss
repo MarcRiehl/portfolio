@@ -49,17 +49,12 @@ body {
     }
 }
 
-.wrapper-footer {
-    display: flex;
-    justify-content: center;
+footer {
+ width: 100%;
 }
 
-footer {
-    height: 128px;
-    max-width: 1440px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.wrapper-footer {
+     width: 100%;
 }
 
 h1 {

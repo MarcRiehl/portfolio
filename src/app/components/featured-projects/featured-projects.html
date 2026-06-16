@@ -1,3 +1,49 @@
 <section id="projects">
-<p>featured-projects works!</p>
+    <div class="wrapper-inline">
+        <div class="box-right">
+            <div class="box-headline">Portfolio</div>
+            <div class="inner-box-wrapper">
+                <div class="inner-box-headline">Featured Projects</div>
+                <div class="inner-box-text-block">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                    commodo ligula eget dolor.
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="projects">
+
+        <div class="project-list">
+            @for(project of projects; track project.id){
+
+            <div class="project-item" (mouseenter)="setPreview(project)" (mouseleave)="clearPreview()"
+                (click)="openProject(project)">
+
+                <h3 class="project-list-titel">{{ project.title }}</h3>
+                <div class="wrapper-project-list-technologie">
+                    @for(tech of project.technologies; track tech.name) {
+                    <div class="product-list-technologie">{{ tech.name }}</div>
+                    }
+                </div>
+            </div>
+
+            }
+
+        </div>
+
+        <div class="project-preview" [class.has-preview]="hoveredProject">
+            @if(hoveredProject) {
+            <img [src]="hoveredProject.previewImage" [alt]="hoveredProject.title">
+            }
+        </div>
+
+    </div>
+
+    @if(modalOpen){
+    <app-project-modal [project]="selectedProject" (close)="closeModal()" (next)="showNextProject()"
+        (previous)="showPreviousProject()">
+    </app-project-modal>
+    }
+
+
 </section>

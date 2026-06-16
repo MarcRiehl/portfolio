@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SkillSet } from '../../interfaces/skill-set';
+import { SkillSet } from '../../interfaces/skill-set-interface';
 import { ScrollService } from '../../services/scroll-service';
 
 
