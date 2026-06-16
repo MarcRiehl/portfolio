@@ -24,7 +24,7 @@
         <div class="skills-container">
             <div class="skill-box">
                 @for (skill of skills; track $index; let last = $last) {
-                <div class="skill-description">
+                <div class="skill-description" [class.last-skill]="last">
                     <img class="skill-icon-img" src="{{skill.img}}" alt="" />
                     <div class="skill-name">{{skill.name}}</div>
                     @if (skill.bubble) {
