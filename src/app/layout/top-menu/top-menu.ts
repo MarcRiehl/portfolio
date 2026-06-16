@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollService } from '../../services/scroll-service';
 
 @Component({
   selector: 'app-top-menu',
@@ -8,12 +9,18 @@ import { Component } from '@angular/core';
 })
 
 export class TopMenu {
-  scrollToSection(id: string) {
-  // console.log('Scroll zu:', id);
-  document.getElementById(id)?.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-    inline: 'nearest'
-  });
-}
+  constructor(private scrollService: ScrollService) { }
+
+  scrollToAbout(): void {
+    this.scrollService.scrollToSection('about');
+  }
+
+  scrollToSkills(): void {
+    this.scrollService.scrollToSection('skills');
+  }
+
+  scrollToProjects(): void {
+    this.scrollService.scrollToSection('projects');
+  }
+
 }

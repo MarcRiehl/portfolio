@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SkillSet } from '../../interfaces/skill-set';
+import { ScrollService } from '../../services/scroll-service';
 
 
 @Component({
@@ -10,6 +11,13 @@ import { SkillSet } from '../../interfaces/skill-set';
 })
 
 export class SkillSets {
+
+  constructor(private scrollService: ScrollService) { }
+
+  scrollToContact(): void {
+    this.scrollService.scrollToSection('contact');
+  }
+
   skills: SkillSet[] =
     [
       {
