@@ -66,7 +66,14 @@ export class SkillSets {
       },
       {
         img: './assets/img/skill-set/icons/growthmindset.svg',
-        name: 'Linux'
+        name: 'Growth mindset',
+        bubble: {
+          text: 'I have a special interest in learning',
+          img1: './assets/img/skill-set/icons/react-blue.svg',
+          img2: './assets/img/skill-set/icons/three-js.svg',
+          name1:'React',
+          name2: 'Three.js'
+        }
       },
     ]
 }

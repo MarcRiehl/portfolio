@@ -16,19 +16,37 @@
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
                         commodo ligula eget dolor.
                     </div>
-                    <button class="button__default" (click)="scrollToContact()"><span class="button__text">Let&acute;s Talk</span></button>
+                    <button class="button__default" (click)="scrollToContact()"><span class="button__text">Let&acute;s
+                            Talk</span></button>
                 </div>
             </div>
         </div>
         <div class="skills-container">
-        <div class="skill-box">
-            @for (skill of skills; track $index) {
-            <div class="skill-description">
-                <img class="skill-icon-img" src="{{skill.img}}" alt="" />
-                <div class="skill-name">{{skill.name}}</div>
+            <div class="skill-box">
+                @for (skill of skills; track $index; let last = $last) {
+                <div class="skill-description">
+                    <img class="skill-icon-img" src="{{skill.img}}" alt="" />
+                    <div class="skill-name">{{skill.name}}</div>
+                    @if (skill.bubble) {
+                    <div class="speech-bubble">
+                        <div class="bubble-text">{{ skill.bubble.text }}</div>
+                        <div class="bubble-icons">
+                            <div class="bubble-inner-icons">
+                                <img [src]="skill.bubble.img1" alt="">
+                                <div class="bubble-skill-name">{{skill.bubble.name1}}</div>
+                            </div>
+                            <div class="bubble-inner-icons">
+                                <img [src]="skill.bubble.img2" alt="">
+                                <div class="bubble-skill-name">{{skill.bubble.name2}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    }
+
+                </div>
+                }
             </div>
-            }
-        </div>
         </div>
     </div>
 </section>
