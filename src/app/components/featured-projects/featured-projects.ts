@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProjectInterface } from '../../interfaces/project-interface';
 import { ProjectService } from '../../services/project-service';
 import { ProjectModal } from './project-modal/project-modal';
@@ -18,6 +18,11 @@ export class FeaturedProjects implements OnInit {
   hoveredProject?: ProjectInterface;
   selectedProject!: ProjectInterface;
 
+  @ViewChild('wrapper')
+  wrapper!: ElementRef<HTMLElement>;
+
+  previewTop = 0;
+
   modalOpen = false;
 
   constructor(
@@ -29,13 +34,22 @@ export class FeaturedProjects implements OnInit {
 
   }
 
-  setPreview(project: ProjectInterface) {
+  setPreview(project: ProjectInterface, element: HTMLElement) {
     this.hoveredProject = project;
+
+    const itemRect = element.getBoundingClientRect();
+    const wrapperRect = this.wrapper.nativeElement.getBoundingClientRect();
+
+    this.previewTop =
+      itemRect.top -
+      wrapperRect.top +
+      itemRect.height / 2 -
+      96;
   }
 
   clearPreview() {
-  this.hoveredProject = undefined;
-}
+    this.hoveredProject = undefined;
+  }
 
   openProject(project: ProjectInterface) {
     this.selectedProject = project;

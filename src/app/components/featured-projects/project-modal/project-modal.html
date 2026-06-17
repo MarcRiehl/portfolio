@@ -1,8 +1,8 @@
-<dialog #dialog class="project-dialog" (close)="onDialogClose()" >
-
-    <button class="close-btn" (click)="closeDialog()">
-        ✕
-    </button>
+<dialog #dialog class="project-dialog" (close)="onDialogClose()">
+    <div class="flex-dialog-close">
+        <button class="close-btn" (click)="closeDialog()">
+        </button>
+    </div>
     <div class="dialog-wrapper-inner">
         <div class="dialog-left">
             <h2 class="dialog-id">{{project.id}}</h2>
@@ -10,13 +10,19 @@
             <div class="dialog-subline">What is this project about?</div>
             <div class="dialog-description">{{ project.description }}</div>
             <div class="dialog-technologies">
-                    @for(tech of project.technologies; track tech.name) {
-                    <div class="dialog-list-technologie">{{ tech.name }}</div>
-                    }
+                @for(tech of project.technologies; track tech.name) {
+                <div class="dialog-list-technologie">
+                    <div class="dialog-icon-technologie"><img src="{{ tech.logo }}" alt="" /> </div>
+                    <div class="dialog-name-technologie">{{ tech.name }}</div>
+                </div>
+                }
             </div>
             <div class="dialog-buttons">
-
-            </div>        
+                <button class="button__external-link"><a href="{{ project.github }}" target="_blank"><span
+                            class="button__text">GitHub</span></a></button>
+                <button class="button__external-link"><a href="{{ project.url }}" target="_blank"><span
+                            class="button__text">Live Test</span></a></button>
+            </div>
         </div>
         <div class="dialog-img">
             <img [src]="project.previewImage">
@@ -24,12 +30,12 @@
     </div>
     <div class="navigation">
 
-        <button type="button" (click)="previous.emit()">
+        <!-- <button type="button" (click)="previous.emit()">
             ←
-        </button>
+        </button> -->
 
         <button type="button" (click)="next.emit()">
-            →
+            <span>Next project</span>
         </button>
 
     </div>

@@ -3,20 +3,19 @@
 dialog {
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     margin: auto;
+
 }
 
 dialog::backdrop {
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(0px);
-  transition: all 250ms ease-in-out;
-  border: none;
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 250ms ease-in-out;
+    border: none;
 }
 
 dialog.opened::backdrop {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  transition: all 250ms ease-in-out;
-  height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    transition: all 250ms ease-in-out;
+    height: 100%;
 }
 
 html:has(dialog[open]) {
@@ -31,6 +30,7 @@ body.dialog-open {
 .dialog-wrapper-inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .backdrop {
@@ -46,33 +46,81 @@ body.dialog-open {
 }
 
 .project-dialog {
-    width: min(1000px, 90vw);
     border: none;
     border-radius: 30px;
-    padding: 40px;
+    padding: 40px 80px;
+    border: 1px solid $secondary-color;
+
 }
 
-.project-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
+.flex-dialog-close {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .close-btn {
-    position: absolute;
-    top: 24px;
-    right: 24px;
+    width: 48px;
+    height: 48px;
     cursor: pointer;
+    background: url('/assets/img/projects/dialog-close.svg') center no-repeat;
+    border: 0;
+}
+
+.close-btn:hover {
+    background: url('/assets/img/projects/dialog-close-hover.svg') center no-repeat;
 }
 
 .navigation {
     display: flex;
-    justify-content: space-between;
-    margin-top: 32px;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
 
     button {
-        font-size: 32px;
         cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-right: 40px;
+
+        &::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background: url('/assets/img/projects/arrow-forward.svg') center / contain no-repeat;
+
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) translateX(0);
+
+            transition: transform 0.3s ease;
+        }
+
+        &:hover::after {
+            transform: translateY(-50%) translateX(10px);
+            background: url('/assets/img/projects/arrow-forward-hover.svg') center / contain no-repeat;
+        }
+
+        &:hover span {
+            color: $primary-color;
+        }
+
+        span {
+            font-family: Karla;
+            font-size: 18px;
+            color: $secondary-color;
+            padding-right: 8px;
+            transition: color 0.3s ease;
+        }
     }
+}
+
+
+.dialog-left {
+    padding-right: 80px;
 }
 
 .dialog-id {
@@ -89,6 +137,7 @@ body.dialog-open {
     font-size: 64px;
     line-height: 80%;
     letter-spacing: -3%;
+
 }
 
 .dialog-subline {
@@ -96,6 +145,8 @@ body.dialog-open {
     font-weight: bold;
     line-height: 120%;
     color: $secondary-color;
+    padding: 24px 0 16px 0;
+
 }
 
 .dialog-description {
@@ -105,10 +156,37 @@ body.dialog-open {
     line-height: 120%;
 }
 
+.dialog-technologies {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.dialog-buttons {
+    padding: 32px 0 0 0;
+}
+
 .dialog-list-technologie {
+
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+}
+
+.dialog-icon-technologie {
+    padding-right: 8px;
+}
+
+.dialog-name-technologie {
+    padding-right: 16px;
     font-family: Karla;
-    color: $primary-color;;
+    color: $primary-color;
     line-height: 120%;
+}
+
+.dialog-img {
+    display: flex;
+    align-items: center;
 }
 
 .dialog-img img {

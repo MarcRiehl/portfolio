@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   EventEmitter,
@@ -16,7 +15,8 @@ import { ProjectInterface } from '../../../interfaces/project-interface';
   templateUrl: './project-modal.html',
   styleUrl: './project-modal.scss',
 })
-export class ProjectModal implements AfterViewInit {
+
+export class ProjectModal {
 
   @Input({ required: true })
   project!: ProjectInterface;
@@ -27,22 +27,25 @@ export class ProjectModal implements AfterViewInit {
   @Output()
   next = new EventEmitter<void>();
 
-  @Output() 
+  @Output()
   previous = new EventEmitter<void>();
 
+  private dialogElement?: HTMLDialogElement;
+
   @ViewChild('dialog')
-  dialog!: ElementRef<HTMLDialogElement>;
+  set dialogRef(dialog: ElementRef<HTMLDialogElement> | undefined) {
 
-  ngAfterViewInit(): void {
-  const dialog = this.dialog.nativeElement;
+    if (!dialog) return;
 
-  if (!dialog.open) {
-    dialog.showModal();
+    this.dialogElement = dialog.nativeElement;
+
+    if (!this.dialogElement.open) {
+      this.dialogElement.showModal();
+    }
   }
-}
 
   closeDialog(): void {
-    this.dialog.nativeElement.close();
+    this.dialogElement?.close();
     this.close.emit();
   }
 

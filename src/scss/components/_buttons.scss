@@ -53,3 +53,60 @@
         opacity: 1;
     }
 }
+
+.button {
+    &__external-link {
+        overflow: hidden;
+        color: $primary-color;
+        font-family: Karla;
+        font-size: 18px;
+        line-height: 120%;
+        width: 100px;
+        border-radius: 100px;
+        border: 1px solid $primary-color;
+        background-color: transparent;
+        padding: 10px 34px 10px 24px;
+        height: 48px;
+        width: auto;
+        cursor: pointer;
+        position: relative;
+        margin-right: 24px;
+
+        &::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: url('/assets/img/projects/arrow-outward.svg') center / contain no-repeat;
+
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) translateX(-18px);
+
+            transition: transform 0.3s ease;
+        }
+
+                &:hover::after {
+            transform: translateY(-80%) translateX(-14px);
+        }
+
+        span {
+            display: inline-block;
+
+        }
+
+        &:hover span {
+            transition: transform 0.3s ease-in;
+            color: $secondary-color;
+        }
+
+        &:hover {
+            border: 1px solid $secondary-color;
+            color: $secondary-color;
+        }
+
+        a {
+            color: $primary-color;
+        }
+    }
+}

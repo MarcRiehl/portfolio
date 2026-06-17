@@ -12,31 +12,29 @@
         </div>
     </div>
     <div class="projects">
-
-        <div class="project-list">
-            @for(project of projects; track project.id){
-
-            <div class="project-item" (mouseenter)="setPreview(project)" (mouseleave)="clearPreview()"
-                (click)="openProject(project)">
-
-                <h3 class="project-list-titel">{{ project.title }}</h3>
-                <div class="wrapper-project-list-technologie">
-                    @for(tech of project.technologies; track tech.name) {
-                    <div class="product-list-technologie">{{ tech.name }}</div>
-                    }
+        <div class="project-wrapper" #wrapper>
+            <div class="project-list">
+                @for(project of projects; track project.id){
+                <div #projectItem class="project-item" (mouseenter)="setPreview(project, projectItem)"
+                    (mouseleave)="clearPreview()" (click)="openProject(project)">
+                    <h3 class="project-list-titel">{{ project.title }}</h3>
+                    <div class="wrapper-project-list-technologie">
+                        @for(tech of project.technologies; track tech.name) {
+                        <div class="product-list-technologie">{{ tech.name }}</div>
+                        }
+                    </div>
                 </div>
+
+                }
+
             </div>
 
-            }
-
+            <div class="project-preview" [class.has-preview]="hoveredProject" [style.top.px]="previewTop">
+                @if(hoveredProject) {
+                <img [src]="hoveredProject.previewImage" [alt]="hoveredProject.title">
+                }
+            </div>
         </div>
-
-        <div class="project-preview" [class.has-preview]="hoveredProject">
-            @if(hoveredProject) {
-            <img [src]="hoveredProject.previewImage" [alt]="hoveredProject.title">
-            }
-        </div>
-
     </div>
 
     @if(modalOpen){

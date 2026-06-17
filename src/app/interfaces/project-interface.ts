@@ -10,5 +10,7 @@ export interface ProjectInterface {
     shortDescription: string;
     description: string;
     previewImage: string;
+    url: string;
+    github: string;
     technologies: Technology[];
 }

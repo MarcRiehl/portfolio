@@ -1,18 +1,31 @@
 @use '../abstract/' as *;
 
+#projects{
+margin-bottom: 128px;
+}
+
 .projects {
+    width: 100%;
+}
+
+.project-wrapper {
     display: flex;
-    justify-content: space-between;
+    position: relative;
     gap: 80px;
 }
 
 .project-list {
-    width: 50%;
-
+    width: 70%;
 }
 
-.wrapper-project-list-technologie{
+.wrapper-project-list-technologie {
     display: flex;
+}
+
+.project-wrapper .project-preview {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .project-item {
@@ -31,28 +44,30 @@
 }
 
 .project-preview {
-    width: 40%;
-    min-height: 400px;
-    position: relative;
+    position: absolute;
+    right: 0;
+    width: 296px;
+    pointer-events: none;
+    transition: top 250ms ease;
 
     img {
         width: 296px;
-        height: auto;
-        animation: fadeIn .3s ease-in;
+        height: 192px;
+        // animation: fadeIn .3s ease-in;
         border-radius: 16px;
     }
 
     &::after {
         content: '';
         position: absolute;
-        left: 20px;
-        top: 20px;
+        right: -20px;
+        bottom: -20px;
         width: 293px;
         height: 192px;
         border-radius: 16px;
         background: url('/assets/img/projects/img-background-hover.svg') center center / cover no-repeat;
         opacity: 0;
-        transition: opacity 0.2s ease-in;
+
         z-index: -1; // hinter dem Bild
     }
 

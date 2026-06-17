@@ -12,19 +12,45 @@ export class ProjectService {
       shortDescription: 'Jump & Run Game',
       description:
         '2D Browsergame with Canvas API and JavaScript.',
-      previewImage: './assets/img/projects/project-shadow-path.jpg',
+      previewImage: './assets/img/projects/projects-img/project-shadow-path.jpg',
+      url: '',
+      github: '',
       technologies: [
         {
           name: 'HTML',
-          logo: './assets/img/skill-set/icons/html.svg'
+          logo: './assets/img/projects/icons/html.svg'
         },
         {
           name: 'CSS',
-          logo: './assets/img/skill-set/icons/css.svg'
+          logo: './assets/img/projects/icons/css.svg'
         },
         {
           name: 'Javascript',
-          logo: './assets/img/skill-set/icons/javascript.svg'
+          logo: './assets/img/projects/icons/javascript.svg'
+        }
+      ]
+    },
+       {
+      id: '02',
+      title: 'Pokedex',
+      shortDescription: 'Jump & Run Game',
+      description:
+        '2D Browsergame with Canvas API and JavaScript.',
+      previewImage: './assets/img/projects/projects-img/pokedex.jpg',
+      url: '',
+      github: '',
+      technologies: [
+        {
+          name: 'HTML',
+          logo: './assets/img/projects/icons/html.svg'
+        },
+        {
+          name: 'CSS',
+          logo: './assets/img/projects/icons/css.svg'
+        },
+        {
+          name: 'Javascript',
+          logo: './assets/img/projects/icons/javascript.svg'
         }
       ]
     }
