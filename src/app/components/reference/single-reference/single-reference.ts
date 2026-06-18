@@ -9,4 +9,7 @@ import { ReferenceInterface } from '../../../interfaces/reference-interface';
 export class SingleReference {
   @Input({ required: true })
   reference!: ReferenceInterface;
+  
+    @Input()
+  isActive = false;
 }

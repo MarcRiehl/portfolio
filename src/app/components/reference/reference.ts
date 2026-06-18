@@ -12,7 +12,8 @@ import { SingleReference } from './single-reference/single-reference';
 export class References implements OnInit {
   references: ReferenceInterface[] = [];
 
-  currentIndex = 0;
+  currentIndex = 1;
+  disableTransition = false;
 
   constructor(private referenceService: ReferenceService) { }
 
@@ -21,21 +22,20 @@ export class References implements OnInit {
   }
 
   next(): void {
-    this.currentIndex =
-      (this.currentIndex + 1) % this.references.length;
+    this.currentIndex = (this.currentIndex + 1) % this.references.length;
   }
 
   previous(): void {
     this.currentIndex =
-      (this.currentIndex - 1 + this.references.length)
-      % this.references.length;
+      (this.currentIndex - 1 + this.references.length) %
+      this.references.length;
   }
 
   goToSlide(index: number): void {
     this.currentIndex = index;
   }
 
-  get currentReference(): ReferenceInterface {
-    return this.references[this.currentIndex];
+  getTransform(): string {
+    return `translateX(calc(20% - ${this.currentIndex * 60}%))`;
   }
 }

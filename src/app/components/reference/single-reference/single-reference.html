@@ -1,11 +1,12 @@
-<div class="reference-card">
+<div class="reference-card" [class.active]="isActive">
 
-    <p class="message">
+    <div class="reference-message">
         "{{ reference.message }}"
-    </p>
-
-    <div class="author">
-        {{ reference.name }}
     </div>
 
+    <div class="author-box">
+        <div class="reference-author">
+            {{ reference.name }}
+        </div>
+    </div>
 </div>
