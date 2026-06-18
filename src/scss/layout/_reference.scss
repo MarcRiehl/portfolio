@@ -16,6 +16,38 @@
 .carousel-wrapper {
     width: 100%;
     overflow: hidden;
+    position: relative;
+}
+
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.carousel-wrapper::before {
+    left: 0;
+    width: 120px;
+    background: linear-gradient(
+        to right,
+        rgba(28, 28, 28, 0.8) 0%,
+        rgba(28, 28, 28, 0) 100%
+    );
+}
+
+.carousel-wrapper::after {
+    right: 0;
+    width: 120px;
+    background: linear-gradient(
+        to left,
+        rgba(28, 28, 28, 0.8) 0%,
+        rgba(28, 28, 28, 0) 100%
+    );
 }
 
 .carousel-track {
@@ -179,6 +211,15 @@
     text-align: right;
 }
 
-.linear {
-    background: linear-gradient(90deg, #1C1C1C 0%, rgba(28, 28, 28, 0) 10%, rgba(28, 28, 28, 0) 90%, #1C1C1C 100%);
+.author-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.author-box::before {
+    content: '';
+    width: 80%;
+    height: 1px;
+    background-color: $primary-color;
+    flex-shrink: 0;
 }
