@@ -35,7 +35,7 @@ export class ProjectService {
       title: 'Pokedex',
       shortDescription: 'Jump & Run Game',
       description:
-        '2D Browsergame with Canvas API and JavaScript.',
+        'A application with API and JavaScript.',
       previewImage: './assets/img/projects/projects-img/pokedex.jpg',
       url: '',
       github: '',

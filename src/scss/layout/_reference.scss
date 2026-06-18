@@ -1,0 +1,100 @@
+@use '../abstract/' as *;
+
+#reference{
+margin-bottom: 128px;
+}
+
+.reference-headline{
+    display: flex;
+    justify-content: center;
+    color: $secondary-color;
+    font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 48px;
+}
+
+.reference-wrapper{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.slider-wrapper-reference {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track-reference {
+    display: flex;
+    transition: transform 500ms ease-in-out;
+    width: 100%;
+}
+
+.slide-reference {
+    min-width: 100%;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.nav-arrow {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    font-size: 24px;
+
+    transition: transform 0.2s ease;
+}
+
+.nav-arrow:hover {
+    transform: scale(1.15);
+}
+
+.bullets {
+    display: flex;
+    gap: 12px;
+}
+
+.bullet {
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+
+    opacity: 0.4;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.bullet:hover {
+    transform: scale(1.15);
+}
+
+.bullet.active {
+    opacity: 1;
+    transform: scale(1.25);
+}
+
+.reference-card{
+    color: $primary-color;
+}

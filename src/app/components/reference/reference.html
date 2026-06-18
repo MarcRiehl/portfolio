@@ -1,0 +1,58 @@
+<section id="reference">
+    <div class="reference-wrapper">
+<div class="reference-headline">
+    What my colleagues say about me
+</div>
+
+ <div class="slider-wrapper-reference">
+
+    <div
+        class="slider-track-reference"
+        [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+
+        @for(reference of references; track reference.id) {
+
+            <div class="slide-reference">
+                <app-single-reference
+                    [reference]="reference">
+                </app-single-reference>
+            </div>
+
+        }
+
+    </div>
+
+
+<div class="slider-navigation">
+
+    <button
+        class="nav-arrow"
+        (click)="previous()">
+        ←
+    </button>
+
+    <div class="bullets">
+
+        @for(reference of references; track reference.id; let i = $index) {
+
+            <button
+                class="bullet"
+                [class.active]="i === currentIndex"
+                (click)="goToSlide(i)">
+            </button>
+
+        }
+
+    </div>
+
+    <button
+        class="nav-arrow"
+        (click)="next()">
+        →
+    </button>
+
+</div>
+
+</div>
+</div>
+</section>
