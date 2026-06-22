@@ -27,3 +27,36 @@
         font-family: Karla;
     }
 }
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-wrapper input{
+color: $primary-color;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.form-cell{
+    padding: 24px;
+    border-top: 1px solid $secondary-color;
+    border-bottom: 1px solid $secondary-color;
+}
+
+.form-checkbox{
+    display: flex;
+}
+
+.checkbox{
+
+}
+
+.form-submit{
+    display: flex;
+    justify-content: center;
+}

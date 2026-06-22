@@ -1,0 +1,45 @@
+<div class="form-wrapper">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-cell">
+            <div class="form-cell-label">
+                <label for="first-name">What´s your name? </label>
+            </div>
+            <div>
+                <input id="first-name" type="text" formControlName="name" />
+            </div>
+        </div>
+        <div class="form-cell">
+            <div>
+                <label for="mail">What´s your email?</label>
+            </div>
+            <div>
+                <input id="mail" type="text" formControlName="email" />
+            </div>
+
+        </div>
+        <div class="form-cell">
+            <div>
+                <label for="inquiry">How can I help yout?</label>
+            </div>
+            <div>
+                <textarea id="inquiry" name="inquiry" rows="1" formControlName="inquiry"></textarea>
+            </div>
+
+        </div>
+        <div class="form-checkbox">
+            <div class="checkbox">
+                <input type="checkbox" formControlName="privacyPolicy">
+            </div>
+            <div class="chcekbox-policy-text">I´ve read the <a class="" routerLink="">privacy policy</a> and agree to
+                the processing of my data as outlined.
+                @if (userForm.get('privacyPolicy')?.invalid &&
+                userForm.get('privacyPolicy')?.touched) {
+                <span>Bitte akzeptiere die Datenschutzerklärung.</span>
+                }
+            </div>
+        </div>
+        <div class="form-submit">
+            <button type="submit" [disabled]="!userForm.valid">submit</button>
+        </div>
+    </form>
+</div>
