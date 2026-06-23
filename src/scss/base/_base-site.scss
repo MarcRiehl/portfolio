@@ -47,6 +47,13 @@ body {
         align-items: center;
         height: 100dvh;
     }
+
+     &__contact {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
 }
 
 footer {
