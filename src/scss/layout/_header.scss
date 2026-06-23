@@ -8,13 +8,13 @@
     color: #FFF;
     margin: 0 auto;
     height: calc(100dvh - 98px);
-
 }
 
 .headline {
     display: flex;
     flex-direction: column;
     align-self: center;
+    align-items: center;
 
 }
 
@@ -32,12 +32,18 @@
 }
 
 .header-left {
-
     justify-self: start;
+    position: relative;
+    bottom: -98px;
 }
 
 .header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     justify-self: end;
+    position: relative;
+    bottom: -98px;
 
 }
 
@@ -148,15 +154,16 @@
     color: $primary-color;
     text-decoration: none;
     padding: 0;
+     white-space: nowrap;
 }
 
 .header-right-mail a:hover {
     color: $secondary-color;
 }
 
-@media (min-width: 1921px){
+@media (min-width: 1921px) {
     .header-left-stroke {
-    height: 514px;
+        height: 514px;
     }
 
     .header-right-stroke {

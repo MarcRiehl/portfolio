@@ -2,7 +2,8 @@
 
 header {
     width: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
+
+
 }
 
 .top-menu {
@@ -20,14 +21,15 @@ header {
     align-items: center;
 }
 
-.link-top-menu {
+.link-top-menu a{
     padding-right: 20px;
     cursor: pointer;
     color: $primary-color;
     font-size: 20px;
+    text-decoration: none;
 }
 
-.link-top-menu:hover {
+.link-top-menu a:hover {
     color: $secondary-color;
 }
 

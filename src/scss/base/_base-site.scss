@@ -14,6 +14,16 @@ body {
     background-color: $primary-bg-color;
 }
 
+.wrapper-top-menu {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
+    z-index: 5;
+    top:0;
+}
+
 .wrapper-header {
     position: relative;
     height: 100dvh;
@@ -21,6 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
 }
 
 .wrapper-content {
@@ -36,10 +47,10 @@ body {
 }
 
 .wrapper-inline {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 
     &__height100 {
         display: flex;
@@ -48,7 +59,7 @@ body {
         height: 100dvh;
     }
 
-     &__contact {
+    &__contact {
         display: flex;
         justify-content: space-between;
     }
@@ -57,11 +68,11 @@ body {
 }
 
 footer {
- width: 100%;
+    width: 100%;
 }
 
 .wrapper-footer {
-     width: 100%;
+    width: 100%;
 }
 
 h1 {

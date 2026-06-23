@@ -1,22 +1,16 @@
 import { Component } from '@angular/core';
 import { SkillSet } from '../../interfaces/skill-set-interface';
-import { ScrollService } from '../../services/scroll-service';
+import { RouterLink } from '@angular/router'
 
 
 @Component({
   selector: 'app-skill-set',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './skill-set.html',
   styleUrl: './skill-set.scss',
 })
 
 export class SkillSets {
-
-  constructor(private scrollService: ScrollService) { }
-
-  scrollToContact(): void {
-    this.scrollService.scrollToSection('contact');
-  }
 
   skills: SkillSet[] =
     [

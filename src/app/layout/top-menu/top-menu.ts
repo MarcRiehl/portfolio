@@ -1,26 +1,11 @@
 import { Component } from '@angular/core';
-import { ScrollService } from '../../services/scroll-service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-top-menu',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './top-menu.html',
   styleUrl: './top-menu.scss',
 })
-
-export class TopMenu {
-  constructor(private scrollService: ScrollService) { }
-
-  scrollToAbout(): void {
-    this.scrollService.scrollToSection('about');
-  }
-
-  scrollToSkills(): void {
-    this.scrollService.scrollToSection('skills');
-  }
-
-  scrollToProjects(): void {
-    this.scrollService.scrollToSection('projects');
-  }
-
-}
+export class TopMenu {}

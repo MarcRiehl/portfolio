@@ -3,10 +3,6 @@
 .button {
     &__default {
         overflow: hidden;
-        color: $primary-color;
-        font-family: Karla;
-        font-size: 18px;
-        line-height: 120%;
         border-radius: 100px;
         border: 1px solid $primary-color;
         background-color: transparent;
@@ -14,6 +10,17 @@
         height: 48px;
         width: auto;
         cursor: pointer;
+        color: $primary-color;
+        font-family: Karla;
+        font-size: 18px;
+        line-height: 120%;
+
+        a {
+            color: $primary-color;
+            font-family: Karla;
+            font-size: 18px;
+            line-height: 120%;
+        }
 
         span {
             display: inline-block;
