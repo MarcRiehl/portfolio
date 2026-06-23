@@ -2,44 +2,77 @@
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div class="form-cell">
             <div class="form-cell-label">
-                <label for="first-name">What´s your name? </label>
+                <label for="name">What´s your name? </label>
             </div>
             <div>
-                <input id="first-name" type="text" formControlName="name" />
+                <input id="name" type="text" name="name" formControlName="name" placeholder="Your name goes here" />
             </div>
-        </div>
-        <div class="form-cell">
-            <div>
-                <label for="mail">What´s your email?</label>
-            </div>
-            <div>
-                <input id="mail" type="text" formControlName="email" />
-            </div>
+            <div class="form-error-placeholder">
+                @if (name.touched && name.invalid) {
 
-        </div>
-        <div class="form-cell">
-            <div>
-                <label for="inquiry">How can I help yout?</label>
-            </div>
-            <div>
-                <textarea id="inquiry" name="inquiry" rows="1" formControlName="inquiry"></textarea>
-            </div>
+                @if (name.errors?.['required']) {
 
-        </div>
-        <div class="form-checkbox">
-            <div class="checkbox">
-                <input type="checkbox" formControlName="privacyPolicy">
-            </div>
-            <div class="chcekbox-policy-text">I´ve read the <a class="" routerLink="">privacy policy</a> and agree to
-                the processing of my data as outlined.
-                @if (userForm.get('privacyPolicy')?.invalid &&
-                userForm.get('privacyPolicy')?.touched) {
-                <span>Bitte akzeptiere die Datenschutzerklärung.</span>
+                <p class="form-error">
+                    Oops! it seems your name is missing
+                </p>
+                }
+                @if (name.errors?.['minlength']) {
+                <p class="form-error">
+                    Minimum 4 characters required.
+                </p>
+                }
                 }
             </div>
         </div>
+        <div class="form-cell">
+            <div class="form-cell-label">
+                <label for="mail">What´s your email?</label>
+            </div>
+            <div>
+                <input id="mail" type="text" name="mail" formControlName="email" placeholder="youremail@email.com" />
+            </div>
+            <div class="form-error-placeholder">
+                @if (email.touched && email.invalid) {
+                <p class="form-error">
+                    Hoppla! your email is required
+                </p>
+                }
+            </div>
+        </div>
+        <div class="form-cell">
+            <div class="form-cell-label">
+                <label for="message">How can I help you?</label>
+            </div>
+            <div>
+                <input id="message" name="message" type="text" formControlName="message"
+                    placeholder="Hello Marc, I am interested in..." />
+            </div>
+            <div class="form-error-placeholder">
+                @if (message.touched && message.invalid) {
+                <p class="form-error">
+                    What do you need to develop?
+                </p>
+                }
+            </div>
+        </div>
+        <div class="form-checkbox">
+            <label class="custom-checkbox">
+                <input type="checkbox" formControlName="privacyPolicy">
+                <span class="checkbox-icon"></span>
+                <span class="checkkbox-policy-text">I´ve read the <a class="" routerLink="">privacy policy</a>
+                    and agree to the processing of my data as outlined.
+                </span>
+            </label>
+        </div>
+        <div class="form-error-placeholder">
+            @if (privacyPolicy.invalid && privacyPolicy.dirty) {
+            <p class="form-error__policy">
+                Please accept the privacy policy.
+            </p>
+            }
+        </div>
         <div class="form-submit">
-            <button type="submit" [disabled]="!userForm.valid">submit</button>
+            <button class="button__default" type="submit" [disabled]="userForm.invalid">Say Hello ;)</button>
         </div>
     </form>
 </div>

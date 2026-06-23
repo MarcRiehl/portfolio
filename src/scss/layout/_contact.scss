@@ -1,7 +1,13 @@
 @use '../abstract/' as *;
 
+#contact{
+margin-bottom: 120px;
+}
+
 .box-left-contact {
     width: 50%;
+    padding-right: 40px;
+    ;
 }
 
 .box-right-contact {
@@ -28,35 +34,145 @@
     }
 }
 
-.form-wrapper{
+.form-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.form-wrapper input{
-color: $primary-color;
 
-    background-color: transparent;
-    border: none;
-    outline: none;
+.form-wrapper {
+    input {
+        color: $primary-color;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-family: Karla;
+        font-size: 18px;
+        line-height: 120%;
+        cursor: pointer;
+        margin-top: 16px;
+        width: 100%;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        &:hover::placeholder,
+        &:focus::placeholder {
+            color: rgba(255, 255, 255, 1);
+        }
+    }
 }
 
-.form-cell{
+
+.form-cell {
     padding: 24px;
-    border-top: 1px solid $secondary-color;
-    border-bottom: 1px solid $secondary-color;
+    border-top: 1px solid rgba(61, 207, 182, 0.5);
+    border-bottom: 1px solid rgba(61, 207, 182, 0.5);
 }
 
-.form-checkbox{
+.form-cell:hover {
+    border-top: 1px solid rgba(61, 207, 182, 1);
+    border-bottom: 1px solid rgba(61, 207, 182, 1);
+}
+
+.form-cell-label label {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    color: $secondary-color;
+}
+
+.form-checkbox {
     display: flex;
+    align-items: center;
+    margin-top: 24px;
 }
 
-.checkbox{
-
+.checkbox {
+    font-size: 18px;
+    padding-right: 8px;
 }
 
-.form-submit{
+.checkkbox-policy-text {
+    font-family: Karla;
+    font-size: 15px;
+    line-height: 120%;
+    color: $primary-color;
+
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $primary-color;
+        border-bottom: 1px solid $secondary-color;
+    }
+}
+
+.chcekbox-policy-text-error {
+    font-size: 14px;
+}
+
+.form-submit {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
+    ;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    .checkbox-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+
+        background-image: url('/assets/img/contact/checkbox-default.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        transition: background-image 0.2s ease;
+    }
+
+    &:hover input:not(:checked)+.checkbox-icon {
+        background-image: url('/assets/img/contact/checkbox-default-hover.svg');
+    }
+
+    input:checked+.checkbox-icon {
+        background-image: url('/assets/img/contact/checkbox-checked.svg');
+    }
+
+    &:hover input:checked+.checkbox-icon {
+        background-image: url('/assets/img/contact/checkbox-checked-hover.svg');
+    }
+}
+
+.form-error-placeholder {
+    height: 20px;
+    display: flex;
+}
+
+.form-error {
+    color: rgba(236, 123, 123, 0.8);
+    font-family: Karla;
+    font-size: 18px;
+    line-height: 120%;
+
+    &__policy {
+        color: rgba(236, 123, 123, 0.8);
+        font-family: Karla;
+        font-size: 14px;
+    }
 }
