@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Textslider } from '../textslider/textslider';
-import { RouterLink } from '@angular/router'
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
-  imports: [Textslider, RouterLink],
+  imports: [Textslider, RouterLink, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

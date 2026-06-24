@@ -7,8 +7,8 @@
         <div class="dialog-left">
             <h2 class="dialog-id">{{project.id}}</h2>
             <h2 class="dialog-title">{{ project.title }}</h2>
-            <div class="dialog-subline">What is this project about?</div>
-            <div class="dialog-description">{{ project.description }}</div>
+            <div class="dialog-subline">{{ 'portfolio.modal.headline' | translate }}</div>
+            <div class="dialog-description">{{ project.description | translate }}</div>
             <div class="dialog-technologies">
                 @for(tech of project.technologies; track tech.name) {
                 <div class="dialog-list-technologie">
@@ -29,13 +29,8 @@
         </div>
     </div>
     <div class="navigation">
-
-        <!-- <button type="button" (click)="previous.emit()">
-            ←
-        </button> -->
-
         <button type="button" (click)="next.emit()">
-            <span>Next project</span>
+            <span>{{ 'portfolio.modal.next' | translate }}</span>
         </button>
 
     </div>

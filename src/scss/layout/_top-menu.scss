@@ -2,8 +2,34 @@
 
 header {
     width: 100%;
+}
 
+.link-language-switch {}
 
+.switch-en {
+    width: 84px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    background-image: url('/assets/img/language-switcher/switch-german.svg');
+
+    &:hover {
+        background-image: url('/assets/img/language-switcher/switch-german-hover.svg');
+    }
+}
+
+.switch-de {
+    width: 84px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    background-image: url('/assets/img/language-switcher/switch-english.svg');
+
+    &:hover {
+        background-image: url('/assets/img/language-switcher/switch-english-hover.svg');
+    }
 }
 
 .top-menu {
@@ -21,7 +47,7 @@ header {
     align-items: center;
 }
 
-.link-top-menu a{
+.link-top-menu a {
     padding-right: 20px;
     cursor: pointer;
     color: $primary-color;
@@ -35,6 +61,7 @@ header {
 
 .link-language-switch {
     padding-right: 20px;
+    cursor: pointer;
 }
 
 .logo {

@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-textslider',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './textslider.html',
   styleUrl: './textslider.scss',
 })
 export class Textslider {
   texts: string[] = [
-    'Fullstack Developer',
-    'Based in Mendig',
-    'Open to work',
-    'Available for remote work'
+    'textslider.developer',
+    'textslider.based',
+    'textslider.available',
+    'textslider.work'
   ];
 }

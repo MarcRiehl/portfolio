@@ -2,10 +2,11 @@
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div class="form-cell">
             <div class="form-cell-label">
-                <label for="name">What´s your name? </label>
+                <label for="name">{{ 'contact.mail.name' | translate }}</label>
             </div>
             <div>
-                <input id="name" type="text" name="name" formControlName="name" placeholder="Your name goes here" />
+                <input id="name" type="text" name="name" formControlName="name"
+                    placeholder="{{ 'contact.mail.name-placeholder' | translate }}" />
             </div>
             <div class="form-error-placeholder">
                 @if (name.touched && name.invalid) {
@@ -13,12 +14,12 @@
                 @if (name.errors?.['required']) {
 
                 <p class="form-error">
-                    Oops! it seems your name is missing
+                    {{ 'contact.mail.name-error' | translate }}
                 </p>
                 }
                 @if (name.errors?.['minlength']) {
                 <p class="form-error">
-                    Minimum 4 characters required.
+                    {{ 'contact.mail.name-error-length' | translate }}
                 </p>
                 }
                 }
@@ -26,31 +27,32 @@
         </div>
         <div class="form-cell">
             <div class="form-cell-label">
-                <label for="mail">What´s your email?</label>
+                <label for="mail">{{ 'contact.mail.mail' | translate }}</label>
             </div>
             <div>
-                <input id="mail" type="text" name="mail" formControlName="email" placeholder="youremail@email.com" />
+                <input id="mail" type="text" name="mail" formControlName="email"
+                    placeholder="{{ 'contact.mail.mail-placeholder' | translate }}" />
             </div>
             <div class="form-error-placeholder">
                 @if (email.touched && email.invalid) {
                 <p class="form-error">
-                    Hoppla! your email is required
+                    {{ 'contact.mail.mail-error' | translate }}
                 </p>
                 }
             </div>
         </div>
         <div class="form-cell">
             <div class="form-cell-label">
-                <label for="message">How can I help you?</label>
+                <label for="message">{{ 'contact.mail.message' | translate }}</label>
             </div>
             <div>
                 <input id="message" name="message" type="text" formControlName="message"
-                    placeholder="Hello Marc, I am interested in..." />
+                    placeholder="{{ 'contact.mail.message-placeholder' | translate }}" />
             </div>
             <div class="form-error-placeholder">
                 @if (message.touched && message.invalid) {
                 <p class="form-error">
-                    What do you need to develop?
+                  {{ 'contact.mail.message-error' | translate }}
                 </p>
                 }
             </div>
@@ -59,20 +61,20 @@
             <label class="custom-checkbox">
                 <input type="checkbox" formControlName="privacyPolicy">
                 <span class="checkbox-icon"></span>
-                <span class="checkkbox-policy-text">I´ve read the <a routerLink="privacy-policy">privacy policy</a>
-                    and agree to the processing of my data as outlined.
+                <span class="checkkbox-policy-text">{{ 'contact.mail.policy-first' | translate }} <a routerLink="privacy-policy">{{ 'contact.mail.policy-second' | translate }}</a>
+                   {{ 'contact.mail.policy-third' | translate }}
                 </span>
             </label>
         </div>
         <div class="form-error-placeholder">
             @if (privacyPolicy.invalid && privacyPolicy.dirty) {
             <p class="form-error__policy">
-                Please accept the privacy policy.
+                 {{ 'contact.mail.policy-error' | translate }}
             </p>
             }
         </div>
         <div class="form-submit">
-            <button class="button__default" type="submit" [disabled]="userForm.invalid">Say Hello ;)</button>
+            <button class="button__default" type="submit" [disabled]="userForm.invalid">{{ 'buttons.hello' | translate }}</button>
         </div>
     </form>
 </div>

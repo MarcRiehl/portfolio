@@ -1,10 +1,16 @@
 <header>
     <div class="top-menu">
        <nav class="top-menu-left">
-        <div class="hide-mobil link-language-switch"><img class="img-language-switch" src="./assets/img/language-switcher/switch-english.png" alt="language-switch"/></div>
-        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="about">About me</a></div>
-        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="skills">Skills</a></div>
-        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="projects">Projects</a></div>
+         <div class="hide-mobil link-language-switch" >
+            @if (currentLanguage === "en") {
+            <button class="switch-de" (click)="useLanguage(  'de' )"></button>
+            }@else {
+                <button class="switch-en" (click)="useLanguage(  'en' )"></button>
+            }
+        </div>
+        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="about">{{ 'top-menu.about' | translate }}</a></div>
+        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="skills">{{ 'top-menu.skills' | translate }}</a></div>
+        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="projects">{{ 'top-menu.projects' | translate }}</a></div>
        </nav>
        <div class="top-logo"><img class="logo" src="./assets/img/logo/logo-riehl-default.png" alt="logo marc riehl"></div>
     </div>

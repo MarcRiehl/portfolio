@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ReferenceInterface } from '../../interfaces/reference-interface';
 import { ReferenceService } from '../../services/reference-service';
 import { SingleReference } from './single-reference/single-reference';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-feed',
-  imports: [SingleReference],
+  imports: [SingleReference, TranslatePipe],
   templateUrl: './reference.html',
   styleUrl: './reference.scss',
 })

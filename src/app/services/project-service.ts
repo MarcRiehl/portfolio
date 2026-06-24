@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
-import { ProjectInterface } from '../interfaces/project-interface'
+import { Injectable, inject } from '@angular/core';
+import { ProjectInterface } from '../interfaces/project-interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectService {
+
   private projects: ProjectInterface[] = [
     {
       id: '01',
       title: 'Shadow-Path',
       shortDescription: 'Jump & Run Game',
-      description:
-        '2D Browsergame with Canvas API and JavaScript.',
+      description: 'portfolio.modal.description-shadow-path',
       previewImage: './assets/img/projects/projects-img/project-shadow-path.jpg',
       url: '',
       github: '',
@@ -30,13 +30,12 @@ export class ProjectService {
         }
       ]
     },
-       {
+    {
       id: '02',
-      title: 'Pokedex',
+      title: 'Join',
       shortDescription: 'Jump & Run Game',
-      description:
-        'A application with API and JavaScript.',
-      previewImage: './assets/img/projects/projects-img/pokedex.jpg',
+      description: 'portfolio.modal.description-join',
+      previewImage: './assets/img/projects/projects-img/join.png',
       url: '',
       github: '',
       technologies: [
@@ -49,8 +48,16 @@ export class ProjectService {
           logo: './assets/img/projects/icons/css.svg'
         },
         {
-          name: 'Javascript',
-          logo: './assets/img/projects/icons/javascript.svg'
+          name: 'Firebase',
+          logo: './assets/img/projects/icons/firebase.svg'
+        },
+        {
+          name: 'Angular',
+          logo: './assets/img/projects/icons/angular.svg'
+        },
+        {
+          name: 'TypeScript',
+          logo: './assets/img/projects/icons/typescript.svg'
         }
       ]
     }

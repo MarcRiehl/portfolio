@@ -2,11 +2,12 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProjectInterface } from '../../interfaces/project-interface';
 import { ProjectService } from '../../services/project-service';
 import { ProjectModal } from './project-modal/project-modal';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-featured-projects',
-  imports: [ProjectModal],
+  imports: [ProjectModal,TranslatePipe],
   templateUrl: './featured-projects.html',
   styleUrl: './featured-projects.scss',
 })

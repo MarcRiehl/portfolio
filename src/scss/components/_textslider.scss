@@ -21,11 +21,14 @@
 }
 
 .slider-track {
-
-    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
     width: max-content;
-    will-change: transform;
     animation: marquee 18s linear infinite;
+}
+
+.separator {
+    margin-right: 56px;
 }
 
 .slider-track span {
@@ -34,7 +37,10 @@
     font-family: Karla;
     line-height: 120%;
     color: $secondary-color;
-    padding-right: 56px;
+}
+
+.slider-track span:not(:last-child) {
+    margin-right: 56px;
 }
 
 @keyframes marquee {

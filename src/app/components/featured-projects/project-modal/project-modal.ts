@@ -8,10 +8,11 @@ import {
 } from '@angular/core';
 
 import { ProjectInterface } from '../../../interfaces/project-interface';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project-modal',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './project-modal.html',
   styleUrl: './project-modal.scss',
 })

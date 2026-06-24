@@ -1,15 +1,17 @@
 <div class="slider-wrapper">
   <div class="slider">
     <div class="slider-inner">
-      <div class="slider-track">
-        @for (text of texts; track $index) {
-          <span>{{ text }}</span><span>●</span>
-        }
+<div class="slider-track">
+  @for (text of texts; track $index) {
+    <span>{{ text | translate }}</span>
+    <span class="separator">●</span>
+  }
 
-        @for (text of texts; track $index) {
-          <span>{{ text }}</span><span>●</span>
-        }
-      </div>
+  @for (text of texts; track $index) {
+    <span>{{ text | translate }}</span>
+    <span class="separator">●</span>
+  }
+</div>
     </div>
   </div>
 </div>

@@ -1,0 +1,107 @@
+{
+    "top-menu": {
+        "about": "About me",
+        "skills": "Skills",
+        "projects": "Projects"
+    },
+    "buttons": {
+        "check-work": "Check my work",
+        "contact-me": "Contact me",
+        "talk": "Let´s Talk",
+        "hello": "Say Hello :)"
+    },
+    "textslider":{
+        "based":"Based in Mendig",
+        "developer":"Fullstack Developer",
+        "available": "Available for remote work",
+        "work": "Open to work"
+    },
+    "who": {
+        "headline": "Who I am",
+        "box-headline": "About me",
+        "description": {
+            "box-description": "As an aspiring full-stack developer, I am fascinated by both the technical challenges of back-end development and the creative design of modern user interfaces. For me, programming combines logical thinking with creative problem-solving and offers the opportunity to bring digital products to life, from the initial idea through to the finished application.",
+            "box-based": "I live in Mendig and prefer to work in a remote-first environment. I am available for occasional in-person meetings at any time.",            
+            "box-technologies": "I’m fascinated by new technologies. Through continuous learning and taking on new challenges, I’m constantly expanding my knowledge.",
+            "box-learn": "Analytical thinking, creative problem-solving and teamwork help me to successfully overcome challenges."
+        }
+    },
+    "skill": {
+        "headline": "Technologies",
+        "box-headline": "Skill Set",
+        "description": {
+            "box-description": "In-depth knowledge of HTML, CSS, JavaScript, TypeScript and Angular. For me, continuous professional development and an openness to new technologies are a given.",
+            "another-skill-first": "You need ",
+            "another-skill-second": "another Skill?",
+            "contact": "Please feel free to contact me. I look forward to continually expanding my knowledge and taking on new challenges."
+        }
+    },
+    "portfolio": {
+        "headline": "Portfolio",
+        "headline-box": "Featured Projects",
+        "description": "Discover my projects – from intuitive user interfaces to high-performance backend solutions.",
+        "modal": {
+            "headline": "What is this prject about?",
+            "description-shadow-path": "2D-Browsergame with Canvas-API und JavaScript.",
+            "description-join": "Task manager inspired by the Kanban System- Create amd organize tasks using drag and drop functions, assign users and categories.",
+            "next": "Next project"
+        }
+    },
+    "reference":{
+        "headline": "What my colleagues say about me"
+    },
+    "contact": {
+        "headline": "Contact me",
+        "box-headline": "Let´s work together",
+        "box-subline": "Got a problem to solve?",
+        "description": "Are you looking for support for your team or project? I look forward to contributing my expertise.",
+        "need": "Need a Fullstack developer?",
+        "need-talk": "Let´s talk!",
+        "mail": {
+            "name": "What´s your name?",
+            "name-placeholder": "Your name goes here",
+            "name-error": "Oops! it seems your name is missing",
+            "name-error-length": "Minimum 4 characters required.",
+            "mail": "What´s your email?",
+            "mail-placeholder": "youremail@email.com",
+            "mail-error": "Hoppla! your email is required",
+            "message": "How can I help you?",
+            "message-placeholder": "Hello Marc, I am interested in...",
+            "message-error": "What do you need to develop?",
+            "policy-first": "I´ve read the ",
+            "policy-second": "privacy policy",
+            "policy-third": " and agree to the processing of my data as outlined.",
+            "policy-error": "Please accept the privacy policy."
+        }
+    },
+    "footer":{
+        "legal": "Legal Notice"
+    },
+    "privacy": {
+        "headline": "Privacy Policy",
+        "description1": "The purpose of this privacy policy is to inform users of this website about the nature, scope and purpose of the collection and use of personal data by the website operator, Marc Riehl.",
+        "description2": "The website operator takes your privacy very seriously and treats your personal data confidentially and in accordance with the relevant legal provisions. As new technologies and the ongoing development of this website may lead to changes being made to this privacy policy, we recommend that you review the privacy policy at regular intervals.",
+        "description3": "Definitions of the terms used (e.g. ‘personal data’ or ‘processing’) can be found in Article 4 of the GDPR.",
+        "description4": "The use of the contact details provided in our legal notice for commercial advertising purposes is expressly not permitted, unless we have given our prior written consent or a business relationship already exists. The provider and all persons named on this website hereby object to any commercial use or disclosure of their data.",
+        "subline-logfiles": "Server log files",
+        "logfiles-description": "We, the website operator or hosting provider, collect data on visits to the website on the basis of our legitimate interest (see Article 6(1)(f) of the GDPR) and store this data as ‘server log files’ on the website’s server. The following data is logged:",
+        "logfiles-list": {
+            "website": "Website visited",
+            "time": "Time of access",
+            "data": "Amount of data sent in bytes",
+            "source": "Source/link from which you accessed the page",
+            "browser": "Browser used",
+            "system": " Operating system used",
+            "ip": "IP address used"
+        },
+        "logfiles-description2": "Server log files are stored for a maximum of 60 days and then deleted. The data is stored for security reasons, for example to investigate cases of misuse. If data needs to be retained for evidential purposes, it is exempt from deletion until the incident has been fully resolved.",
+        "subline-contact-forms": "Collection and processing of data when using the contact forms",
+        "contact-forms-description": "When you use the contact forms, we collect your personal data (name, email address, message text) only to the extent that you provide it. The data is processed for the purpose of contacting you or entering you in the register of associations. By submitting your message, you consent to the processing of the data provided. Processing is carried out on the basis of Article 6(1)(a) of the GDPR with your consent. You may withdraw your consent at any time by notifying us, without this affecting the lawfulness of the processing carried out on the basis of your consent prior to its withdrawal. We use your email address solely to process your enquiry.",
+        "subline-ssl": "SSL encryption",
+        "ssl-description": "This website uses SSL encryption for security reasons and to protect the transmission of confidential information, such as the enquiries you send to us as the website operator. You can recognise an encrypted connection by the fact that the address bar in your browser changes from ‘http://’ to ‘https://’ and by the padlock icon in your browser’s address bar.",
+        "subline-right": "Right of access, erasure and restriction of processing",
+        "right-description1": "As a user, you have the right, upon request, to receive information free of charge about what personal data has been stored about you. You also have the right to have incorrect data rectified and to restrict the processing of or have your personal data erased. Where applicable, you may also exercise your right to data portability. If you believe that your data has been processed unlawfully, you may lodge a complaint with the relevant supervisory authority.",
+        "right-description2": "Provided that your request does not conflict with a legal obligation to retain data (e.g. data retention), you have the right to have your data erased. Data stored by us will be deleted if it is no longer required for its intended purpose and there are no statutory retention periods. If deletion cannot be carried out because the data is required for legitimate legal purposes, data processing will be restricted. In this case, the data will be blocked and will not be processed for any other purposes.",
+        "right-description3": "Users of this website may exercise their right to object and object to the processing of their personal data at any time. If you wish to request the rectification, restriction, erasure or access to the personal data held about you, or if you have any questions regarding the collection, processing or use of your personal data, or if you wish to withdraw any consent you have given, you will find the contact details in my legal notice."
+    }
+}

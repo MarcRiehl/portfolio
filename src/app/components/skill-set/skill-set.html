@@ -1,22 +1,21 @@
 <section id="skills">
     <div class="wrapper-inline">
         <div class="box-right">
-            <div class="box-headline">Technologies</div>
+            <div class="box-headline">{{ 'skill.headline' | translate }}</div>
             <div class="content-box__left">
                 <div class="inner-box-wrapper">
-                    <div class="inner-box-headline">Skill Set</div>
-                    <div class="inner-box-text-block">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                        nascetur ridiculus mus. </div>
+                    <div class="inner-box-headline">{{ 'skill.box-headline' | translate }}</div>
+                    <div class="inner-box-text-block">{{ 'skill.description.box-description' | translate }}</div>
                     <div class="inner-box-subline">
-                        You need <span>another Skill?</span>
+                        {{ 'skill.description.another-skill-first' | translate }} <span>{{
+                            'skill.description.another-skill-second' | translate }} </span>
                     </div>
                     <div class="inner-box-text-block">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                        commodo ligula eget dolor.
+                        {{ 'skill.description.contact' | translate }}
                     </div>
-                    <button class="button__default"><a routerLink="/" fragment="contact"><span class="button__text">Let&acute;s
-                            Talk</span></a></button>
+                    <button class="button__default"><a routerLink="/" fragment="contact"><span class="button__text">
+                                {{ 'buttons.talk' | translate }}
+                            </span></a></button>
                 </div>
             </div>
         </div>

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { SkillSet } from '../../interfaces/skill-set-interface';
-import { RouterLink } from '@angular/router'
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-skill-set',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   templateUrl: './skill-set.html',
   styleUrl: './skill-set.scss',
 })
