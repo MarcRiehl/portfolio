@@ -11,12 +11,26 @@
     font-size: 32px;
     font-weight: bold;
     padding-bottom: 48px;
+    position: relative;
 }
 
 .carousel-wrapper {
     width: 100%;
     overflow: hidden;
     position: relative;
+}
+.reference-wrapper{
+position: relative;
+}
+
+.carousel-quotes{
+ background-image: url('/assets/img/reference/quotes.svg');
+ width: 90px;
+ height:64px;
+ position: absolute;
+ left: 19%;
+ top: 80px;
+ z-index:99;
 }
 
 .carousel-wrapper::before,
@@ -28,6 +42,7 @@
     height: 100%;
     z-index: 10;
     pointer-events: none;
+   
 }
 
 .carousel-wrapper::before {
@@ -183,7 +198,6 @@
     background-color: rgba(61, 207, 182, 0.1);
     color: $primary-color;
     border: 1px solid $secondary-color;
-    padding: 24px;
     border-radius: 32px;
     transition: all 0.4s ease;
     padding: 40px;
@@ -191,6 +205,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 300px;
+    min-width: 700px;
 }
 
 .reference-card.active  {

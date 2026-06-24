@@ -1,11 +1,13 @@
 <section id="reference">
     <div class="reference-wrapper">
-
+        <div class="carousel-quotes"></div>
         <div class="reference-headline">
             What my colleagues say about me
+
         </div>
 
         <div class="carousel-wrapper">
+
             <div class="carousel-track" [class.no-transition]="disableTransition" [style.transform]="getTransform()">
 
                 @for(reference of references; track reference.id; let i = $index) {

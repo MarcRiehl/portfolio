@@ -1,5 +1,9 @@
 @use '../abstract/' as *;
 
+footer{
+    margin-bottom: 60px;
+}
+
 .footer-center{
     color: $secondary-color;
     font-size: 18px;
