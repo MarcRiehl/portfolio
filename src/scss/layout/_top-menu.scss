@@ -45,6 +45,9 @@ header {
 .top-menu-left {
     display: flex;
     align-items: center;
+          @include desktop {
+        padding-left: 20px;
+    }
 }
 
 .link-top-menu a {
@@ -70,6 +73,10 @@ header {
     @include mobile-tablet {
         padding-left: 20px;
     }
+        @include desktop {
+        padding-right: 20px;
+    }
+
 }
 
 .hamburger {

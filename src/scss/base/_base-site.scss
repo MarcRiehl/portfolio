@@ -56,6 +56,11 @@ body {
         flex-direction: column;
     }
 
+         @include tablet {
+            flex-direction: column;
+            height: 100%;
+        }
+
     &__height100 {
         display: flex;
         justify-content: space-between;
@@ -64,10 +69,19 @@ body {
 
         @include mobile {
             flex-direction: column;
+            height: 100%;
         }
+
         @include landscape {
             flex-direction: column;
+            height: 100%;
         }
+
+        @include tablet {
+            flex-direction: column;
+            height: 100%;
+        }
+
     }
 
     &__contact {

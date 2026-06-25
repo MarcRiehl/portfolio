@@ -9,7 +9,7 @@
         background-color: rgba(61, 207, 182, 0.1);
 
         @include mobile {
-            width: 90dvw;  
+            width: 90dvw;
         }
     }
 
@@ -27,34 +27,47 @@
 }
 
 .box-headline {
-    font-family: Karla;
+    font-family: 'Karla';
     font-size: 24px;
-    font-weight: medium;
+    font-weight: 500;
     color: $secondary-color;
     padding-bottom: 16px;
+
+    @include mobile {
+        font-size: 18px;
+    }
 }
 
 .inner-box-headline {
-    font-family: FiraCode;
+    font-family: 'FiraCode';
     font-size: 64px;
     font-weight: bold;
     color: $secondary-color;
     letter-spacing: -3%;
     padding-bottom: 32px;
+
+    @include mobile {
+        font-size: 56px;
+        line-height: 80%;
+    }
 }
 
 .inner-box-text-block {
-    font-family: Karla;
+    font-family: 'Karla';
     font-size: 18px;
     font-weight: 400;
     line-height: 120%;
     color: $primary-color;
     text-align: justify;
     padding-bottom: 24px;
+
+    @include mobile {
+        font-size: 16px;
+    }
 }
 
 .inner-box-list td {
-    font-family: Karla;
+    font-family: 'Karla';
     font-size: 18px;
     font-weight: 400;
     line-height: 120%;
@@ -62,6 +75,9 @@
     text-align: left;
     padding-bottom: 24px;
 
+    @include mobile {
+        font-size: 16px;
+    }
 }
 
 .inner-box-list>td {
@@ -75,4 +91,10 @@
     padding-right: 16px;
     height: 32px;
     width: auto;
+}
+
+.td-icon {
+    @include mobile {
+        display: flex;
+    }
 }

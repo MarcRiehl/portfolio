@@ -1,5 +1,11 @@
 @use '../abstract/' as *;
 
+#skills {
+    @include mobile {
+        margin-top: 40px;
+    }
+}
+
 .inner-box-subline {
     font-weight: bold;
     font-size: 24px;
@@ -23,6 +29,14 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
+
+    @include mobile {
+        justify-content: center;
+    }
+
+    @include tablet {
+        justify-content: center;
+    }
 }
 
 .skill-box {
@@ -32,10 +46,18 @@
     width: 80%;
     margin-top: 44px;
     padding-top: 32px;
-        @include mobile {
-            width: 90dvw;
-            grid-template-columns: repeat(3, 1fr);
-        }
+
+    @include mobile {
+        width: 90dvw;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+        margin-top: 20px;
+    }
+
+    @include tablet {
+        width: 90dvw;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .skill-description {
@@ -49,7 +71,7 @@
     &:hover .speech-bubble {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+    
     }
 
 }
@@ -72,6 +94,11 @@
     font-size: 18px;
     line-height: 120%;
     transition: color 0.3s ease;
+
+    @include mobile {
+        font-size: 16px;
+        text-align: center;
+    }
 }
 
 .last-skill:hover .skill-name {
@@ -82,39 +109,68 @@
     text-align: center;
 }
 
-
-.speech-bubble {
-    position: absolute;
-    bottom: 120%;
-    left: 20%;
-    transform: translateX(0%) translateY(10px);
-
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-
-    padding: 16px;
-    border-radius: 16px;
-    background: white;
-    min-width: 220px;
-    filter: drop-shadow(rgba(0, 0, 0, 0.25));
+.last-skill .speech-bubble {
 
     &::after {
-        content: '';
-        position: absolute;
-
-        bottom: -8px;
-        left: 45px;
-        transform: translateX(-50%) rotate(45deg);
-
-        width: 16px;
-        height: 16px;
-
-        background: white;
-        border-radius: 3px;
+        left: auto;
+        right: 36px;
+        transform: rotate(45deg);
     }
 }
 
+
+/* Fallback für alle Browser */
+.speech-bubble {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Nur wenn Anchor Positioning unterstützt wird */
+@supports (anchor-name: --anchor) {
+    .last-skill {
+        anchor-name: --last-skill;
+    }
+
+    .speech-bubble {
+       position: absolute;
+    position-anchor: --skill-anchor;
+
+    left: anchor(center);
+    top: anchor(top);
+
+    translate: 20% calc(-80% - 20px);
+    }
+}
+
+.speech-bubble {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+    padding: 16px;
+    border-radius: 16px;
+    background: #fff;
+    width: min(220px, calc(100vw - 32px));
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,.25));
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    width: 16px;
+    height: 16px;
+
+    background: inherit;
+    border-radius: 4px;
+
+    transform: translateX(-50%) rotate(45deg);
+}
 .bubble-icons {
     display: flex;
     justify-content: center;
