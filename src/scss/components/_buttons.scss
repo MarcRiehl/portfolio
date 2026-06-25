@@ -11,9 +11,23 @@
         width: auto;
         cursor: pointer;
         color: $primary-color;
-        font-family: Karla;
+        font-family: 'Karla';
         font-size: 18px;
         line-height: 120%;
+        white-space: nowrap;
+
+        @include mobile {
+            padding: 10px 12px 10px 12px;
+        }
+
+        @include small-mobile {
+            padding: 6px 12px 6px 12px;
+        }
+
+        @include landscape {
+            padding: 6px 12px 6px 12px;
+        }
+
 
         a {
             color: $primary-color;
@@ -40,7 +54,18 @@
             cursor: not-allowed;
         }
 
+
     }
+
+    &__text {
+        font-size: 18px;
+
+        @include mobile {
+            font-size: 16px;
+        }
+
+    }
+
 }
 
 @keyframes text-loop {
@@ -69,7 +94,7 @@
     &__external-link {
         overflow: hidden;
         color: $primary-color;
-        font-family: Karla;
+        font-family: 'Karla';
         font-size: 18px;
         line-height: 120%;
         width: 100px;

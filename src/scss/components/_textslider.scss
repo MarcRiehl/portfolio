@@ -2,18 +2,39 @@
 
 .slider-wrapper {
     position: absolute;
+    z-index: 999;
     left: 0;
     right: 0;
     bottom: 0;
-    // filter: blur(5.3px);
+
 }
 
 .slider {
+    position: relative;
     overflow: hidden;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.12);
     padding: 12px 32px;
     transform: translateY(-50px) rotate(-3deg);
+
+    @include mobile-tablet {
+        padding: 6px 16px;
+    }
+
+    @include landscape {
+        padding: 6px 16px;
+        transform: translateY(0px) rotate(0deg);
+    }
+
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(6px);
+    pointer-events: none;
 }
 
 .slider-inner {

@@ -1,11 +1,22 @@
 @use '../abstract/' as *;
 
 
+#about{
+     @include mobile {
+       margin-top: 60px;
+        }
+}
 
 .about-img-left {
     position: relative;
     width: 568px;
     height: 568px;
+
+    @include mobile {
+        width: 90dvw;
+        height: 90dvw;
+    }
+
 
     &::after {
         content: '';
@@ -19,6 +30,11 @@
         opacity: 0;
         transition: opacity 0.2s ease;
         z-index: -1; // hinter dem Bild
+
+        @include mobile {
+            width: 90dvw;
+            height: 90dvw;
+        }
     }
 
     &:hover::after {
@@ -33,6 +49,11 @@
     border-radius: 30px;
     position: relative;
     z-index: 1;
+
+    @include mobile {
+        width: 90dvw;
+        height: 90dvw;
+    }
 }
 
 .box-right {

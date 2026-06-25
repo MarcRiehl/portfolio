@@ -32,6 +32,10 @@
     width: 80%;
     margin-top: 44px;
     padding-top: 32px;
+        @include mobile {
+            width: 90dvw;
+            grid-template-columns: repeat(3, 1fr);
+        }
 }
 
 .skill-description {

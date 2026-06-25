@@ -67,7 +67,7 @@ header {
 .logo {
     width: 120px;
 
-    @include mobile {
+    @include mobile-tablet {
         padding-left: 20px;
     }
 }
@@ -84,7 +84,7 @@ header {
         background: url("/assets/img/mobil/hamburger-press.svg");
     }
 
-    @include mobile {
+    @include mobile-tablet {
         margin-right: 20px;
     }
 }
