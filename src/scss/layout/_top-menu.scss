@@ -66,4 +66,77 @@ header {
 
 .logo {
     width: 120px;
+
+    @include mobile {
+        padding-left: 20px;
+    }
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: url("/assets/img/mobil/hamburger.svg");
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+
+    &:active {
+        background: url("/assets/img/mobil/hamburger-press.svg");
+    }
+
+    @include mobile {
+        margin-right: 20px;
+    }
+}
+
+dialog.mobile-menu {
+    position: absolute;
+    top: 98px;
+    left: 20%;
+    margin: 0;
+
+}
+
+.mobile-menu {
+    width: min(260px, 90vw);
+    padding: 10px;
+    border: 1px solid $secondary-color;
+    border-radius: 30px;
+}
+
+.mobile-menu::backdrop {
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(4px);
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding: 20px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: $primary-color;
+    font-size: 18px;
+    letter-spacing: -3%;
+    &:active{
+        color: $secondary-color;
+    }
+}
+
+
+@media (max-width: 810px) {
+
+    .hide-mobil {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
 }

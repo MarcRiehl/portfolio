@@ -1,17 +1,46 @@
 <header>
     <div class="top-menu">
-       <nav class="top-menu-left">
-         <div class="hide-mobil link-language-switch" >
-            @if (currentLanguage === "en") {
-            <button class="switch-de" (click)="useLanguage(  'de' )"></button>
-            }@else {
+        <nav class="top-menu-left hide-mobil">
+            <div class="link-language-switch">
+                @if (currentLanguage === "en") {
+                <button class="switch-de" (click)="useLanguage(  'de' )"></button>
+                }@else {
                 <button class="switch-en" (click)="useLanguage(  'en' )"></button>
-            }
+                }
+            </div>
+            <div class="link-top-menu"><a routerLink="/" fragment="about">{{ 'top-menu.about' | translate
+                    }}</a></div>
+            <div class="link-top-menu"><a routerLink="/" fragment="skills">{{ 'top-menu.skills' | translate
+                    }}</a></div>
+            <div class="link-top-menu"><a routerLink="/" fragment="projects">{{ 'top-menu.projects' |
+                    translate }}</a></div>
+        </nav>
+        <div class="top-logo"><img class="logo" src="./assets/img/logo/logo-riehl-default.png" alt="logo marc riehl">
         </div>
-        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="about">{{ 'top-menu.about' | translate }}</a></div>
-        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="skills">{{ 'top-menu.skills' | translate }}</a></div>
-        <div class="hide-mobil link-top-menu"><a routerLink="/" fragment="projects">{{ 'top-menu.projects' | translate }}</a></div>
-       </nav>
-       <div class="top-logo"><img class="logo" src="./assets/img/logo/logo-riehl-default.png" alt="logo marc riehl"></div>
+        <!-- Hamburger -->
+        <button class="hamburger" (click)="mobileMenu.showModal()">
+        </button>
     </div>
 </header>
+
+<dialog #mobileMenu class="mobile-menu" closedby="any">
+    <div class="menu-links">
+        <a routerLink="/" fragment="about" (click)="mobileMenu.close()">
+            {{ 'top-menu.about' | translate }}
+        </a>
+
+        <a routerLink="/" fragment="skills" (click)="mobileMenu.close()">
+            {{ 'top-menu.skills' | translate }}
+        </a>
+
+        <a routerLink="/" fragment="projects" (click)="mobileMenu.close()">
+            {{ 'top-menu.projects' | translate }}
+        </a>
+
+        @if (currentLanguage === "en") {
+        <button class="switch-de" (click)="useLanguage(  'de' )"></button>
+        }@else {
+        <button class="switch-en" (click)="useLanguage(  'en' )"></button>
+        }
+    </div>
+</dialog>

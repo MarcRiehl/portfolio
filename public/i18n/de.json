@@ -42,7 +42,7 @@
         "description": "Entdecken Sie meine Projekte – von intuitiven Benutzeroberflächen bis hin zu leistungsstarken Backend-Lösungen.",
         "modal": {
             "headline": "Worum geht es in diesem Projekt?",
-            "description-shadow-path": "2D-Browserspiel mit Canvas-API und JavaScript.",
+            "description-shadow-path": "Auf einem objektorientierten Ansatz basierendes Spiel zum springen, laufen und werfen. Hilf Angel dabei, Münzen und Zaubermittel zu finden, um gegen den verrückten Troll zu kämpfen.",
             "description-join": "Ein vom Kanban-System inspirierter Aufgabenmanager. Erstellen und organisieren Sie Aufgaben per Drag & Drop und weisen Sie ihnen Benutzer und Kategorien zu.",
             "next": "nächstes Projekt"
         }

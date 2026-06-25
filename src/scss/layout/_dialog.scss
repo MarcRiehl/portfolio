@@ -37,11 +37,9 @@ body.dialog-open {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.3);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     z-index: 999;
 }
 
@@ -50,6 +48,7 @@ body.dialog-open {
     border-radius: 30px;
     padding: 40px 80px;
     border: 1px solid $secondary-color;
+
 
 }
 
@@ -154,6 +153,7 @@ body.dialog-open {
     color: $primary-color;
     font-size: 18px;
     line-height: 120%;
+    width: 480px;
 }
 
 .dialog-technologies {
