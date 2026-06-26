@@ -52,7 +52,7 @@ export class ContactForm {
     if (this.sendMailForm.valid) {
       const { name, email, message } = this.sendMailForm.value;
       try {
-        const httpResponse = await fetch('https://www.marc.riehl.de/send-it/sendMail.de', {
+        const httpResponse = await fetch('https://www.marc-riehl.de/send-it/form-send.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
