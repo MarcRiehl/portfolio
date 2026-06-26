@@ -52,6 +52,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 26px;
         margin-top: 20px;
+        justify-content: center;
     }
 
     @include tablet {

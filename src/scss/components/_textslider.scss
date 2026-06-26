@@ -5,17 +5,24 @@
     z-index: 999;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0px;
+      
+  
+}
+
+.slider-container {
+    overflow: hidden;
 
 }
 
 .slider {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: calc(100% + 0px);
+    margin-left: -1px;
     background-color: rgba(255, 255, 255, 0.12);
     padding: 12px 32px;
-    transform: translateY(-50px) rotate(-3deg);
+     transform: translateY(-50px) rotate(-3deg);
 
     @include mobile-tablet {
         padding: 6px 16px;
@@ -58,6 +65,10 @@
     font-family: Karla;
     line-height: 120%;
     color: $secondary-color;
+
+    @include mobile {
+       font-size: 24px; 
+    }
 }
 
 .slider-track span:not(:last-child) {

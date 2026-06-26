@@ -1,11 +1,10 @@
 @use '../abstract/' as *;
 
-footer{
-    margin-bottom: 60px;
-    position: relative;
+footer {
+    margin-bottom: 40px;
 }
 
-.footer-center{
+.footer-center {
     color: $secondary-color;
     font-size: 18px;
     line-height: 120%;
@@ -18,34 +17,92 @@ footer{
     align-items: center;
     max-width: 1440px;
     margin: 0 auto;
-  
+    @include mobile {
+        align-items: flex-start;
+    }
+
 }
 
-.footer-right{
+@include mobile {
+    .footer-flex {
+        flex-wrap: wrap;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 50%;
+    }
+
+    .footer-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .footer-center {
+        width: 100%;
+        order: 3;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.footer-right {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.footer-right-navigation{
+
+.footer-right-navigation {
     display: flex;
     flex-direction: column;
 }
 
-.text-spacer{
-padding-bottom: 10px;
-}
 
-.text-footer-left{
-    font-family: Karla;
+
+.text-footer-left>div {
+    font-family: 'Karla';
     font-size: 16px;
     color: $primary-color;
     line-height: 120%;
+    padding-bottom: 10px;
 
 }
 
-.footer-right-navigation a{
+.footer-right-navigation a {
+    font-family: 'Karla';
     color: $primary-color;
     text-align: left;
     text-decoration: none;
     padding-bottom: 10px;
+    position: relative;
+    font-size: 16px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -14px;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 6.4px;
+        height: 6.4px;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+}
+
+.footer-right-navigation a:hover {
+    color: $secondary-color;
+}
+
+.footer-logo {
+    padding-bottom: 20px;
+}
+.img-logo-footer{
+    width: 120px;
 }

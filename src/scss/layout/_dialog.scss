@@ -2,9 +2,15 @@
 
 dialog {
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
-    margin: auto;
+    margin: 0 auto;
+
+    @include mobile {
+        max-width: none;
+        max-height: none;
+    }
 
 }
+
 
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.4);
@@ -31,6 +37,10 @@ body.dialog-open {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mobile {
+        flex-wrap: wrap-reverse;
+    }
 }
 
 .backdrop {
@@ -49,12 +59,21 @@ body.dialog-open {
     padding: 40px 80px;
     border: 1px solid $secondary-color;
 
+    @include mobile {
+        height: 100dvh;
+        width: 95dvw;
+        padding: 20px 20px;
+    }
 
 }
 
 .flex-dialog-close {
     display: flex;
     justify-content: flex-end;
+
+    @include mobile {
+        padding-bottom: 20px;
+    }
 }
 
 .close-btn {
@@ -74,6 +93,12 @@ body.dialog-open {
     justify-content: flex-end;
     align-items: center;
     position: relative;
+
+    @include mobile {
+        align-items: flex-end;
+        padding-top: 40px;
+
+    }
 
     button {
         cursor: pointer;
@@ -120,14 +145,23 @@ body.dialog-open {
 
 .dialog-left {
     padding-right: 80px;
+
+    @include mobile {
+        padding-right: 0px;
+    }
 }
 
 .dialog-id {
-    font-family: Karla;
+    font-family: 'Karla';
     font-size: 128px;
     font-weight: bold;
     color: $secondary-color;
     letter-spacing: -2%;
+
+    @include mobile {
+        font-size: 72px;
+        padding-top: 20px;
+    }
 }
 
 .dialog-title {
@@ -136,6 +170,10 @@ body.dialog-open {
     font-size: 64px;
     line-height: 80%;
     letter-spacing: -3%;
+
+    @include mobile {
+        font-size: 56px;
+    }
 
 }
 
@@ -146,6 +184,10 @@ body.dialog-open {
     color: $secondary-color;
     padding: 24px 0 16px 0;
 
+    @include mobile {
+        font-size: 20px;
+    }
+
 }
 
 .dialog-description {
@@ -154,16 +196,34 @@ body.dialog-open {
     font-size: 18px;
     line-height: 120%;
     width: 480px;
+
+    @include mobile {
+        font-size: 16px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
 }
 
 .dialog-technologies {
     display: flex;
     align-items: center;
     padding: 16px 0;
+
+    @include mobile{
+        flex-wrap: wrap;
+    }
 }
 
 .dialog-buttons {
     padding: 32px 0 0 0;
+    display: flex;
+
+    gap: 24px;
+
+    @include mobile {
+        gap: 20px;
+        justify-content: center;
+    }
 }
 
 .dialog-list-technologie {
@@ -175,6 +235,12 @@ body.dialog-open {
 
 .dialog-icon-technologie {
     padding-right: 8px;
+
+    @include mobile {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
 }
 
 .dialog-name-technologie {
@@ -187,10 +253,16 @@ body.dialog-open {
 .dialog-img {
     display: flex;
     align-items: center;
+
 }
 
 .dialog-img img {
     border-radius: 30px;
     width: 520px;
     height: auto;
+
+    @include mobile {
+        width: 100%;
+        height: 100%;
+    }
 }

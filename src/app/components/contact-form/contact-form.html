@@ -52,7 +52,7 @@
             <div class="form-error-placeholder">
                 @if (message.touched && message.invalid) {
                 <p class="form-error">
-                  {{ 'contact.mail.message-error' | translate }}
+                    {{ 'contact.mail.message-error' | translate }}
                 </p>
                 }
             </div>
@@ -61,20 +61,23 @@
             <label class="custom-checkbox">
                 <input type="checkbox" formControlName="privacyPolicy">
                 <span class="checkbox-icon"></span>
-                <span class="checkkbox-policy-text">{{ 'contact.mail.policy-first' | translate }} <a routerLink="privacy-policy">{{ 'contact.mail.policy-second' | translate }}</a>
-                   {{ 'contact.mail.policy-third' | translate }}
-                </span>
+
             </label>
+            <div class="checkkbox-policy-text">{{ 'contact.mail.policy-first' | translate }} <a
+                    routerLink="privacy-policy">{{ 'contact.mail.policy-second' | translate }}</a>
+                {{ 'contact.mail.policy-third' | translate }}
+            </div>
         </div>
         <div class="form-error-placeholder">
             @if (privacyPolicy.invalid && privacyPolicy.dirty) {
             <p class="form-error__policy">
-                 {{ 'contact.mail.policy-error' | translate }}
+                {{ 'contact.mail.policy-error' | translate }}
             </p>
             }
         </div>
         <div class="form-submit">
-            <button class="button__default" type="submit" [disabled]="userForm.invalid">{{ 'buttons.hello' | translate }}</button>
+            <button class="button__default" type="submit" [disabled]="userForm.invalid">{{ 'buttons.hello' | translate
+                }}</button>
         </div>
     </form>
 </div>

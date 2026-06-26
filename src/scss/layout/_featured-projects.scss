@@ -1,7 +1,13 @@
 @use '../abstract/' as *;
 
-#projects{
-margin-bottom: 128px;
+.wrapper-projects {}
+
+#projects {
+    margin-bottom: 128px;
+
+    @include mobile {
+      margin-bottom: 80px;
+    }
 }
 
 .projects {
@@ -16,10 +22,20 @@ margin-bottom: 128px;
 
 .project-list {
     width: 70%;
+
+    @include mobile {
+        width: 100%;
+    }
+
+    @include tablet {
+        width: 100%;
+    }
 }
 
 .wrapper-project-list-technologie {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .project-wrapper .project-preview {
@@ -38,6 +54,13 @@ margin-bottom: 128px;
     border-bottom: 1px solid $secondary-color;
     transition: 0.3s ease-in;
 
+    @include mobile {
+        padding: 32px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
     &:hover {
         background-color: rgba(61, 207, 182, 0.3);
     }
@@ -53,7 +76,6 @@ margin-bottom: 128px;
     img {
         width: 296px;
         height: 192px;
-        // animation: fadeIn .3s ease-in;
         border-radius: 16px;
     }
 
@@ -67,13 +89,22 @@ margin-bottom: 128px;
         border-radius: 16px;
         background: url('/assets/img/projects/img-background-hover.svg') center center / cover no-repeat;
         opacity: 0;
-
         z-index: -1; // hinter dem Bild
     }
 
     &.has-preview::after {
         opacity: 1;
     }
+
+    @include mobile {
+        display: none !important;
+    }
+
+    @include tablet {
+        display: none !important;
+    }
+
+
 }
 
 @keyframes fadeIn {
@@ -87,6 +118,7 @@ margin-bottom: 128px;
 
     }
 }
+
 
 .tech-stack {
     display: flex;
@@ -111,15 +143,26 @@ margin-bottom: 128px;
     font-size: 24px;
     color: $primary-color;
     line-height: 120%;
+
+
 }
 
 .product-list-technologie {
     color: $primary-color;
     font-size: 18px;
+    font-family: 'Karla';
+
+    @include mobile {
+        font-size: 16px;
+    }
 
     &:not(:last-child)::after {
-        content: ' | ';
+        content: "|";
         margin: 0 8px;
         color: $secondary-color;
+
+        @include mobile {
+            margin: 0 3px;
+        }
     }
 }
