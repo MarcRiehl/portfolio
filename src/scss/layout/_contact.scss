@@ -11,12 +11,19 @@
     @include mobile {
         width: 100%;
     }
+
+        @include tablet {
+        width: 100%;
+    }
 }
 
 .box-right-contact {
     width: 50%;
 
         @include mobile {
+        width: 100%;
+    }
+            @include tablet {
         width: 100%;
     }
 }
@@ -210,4 +217,19 @@
         font-family: Karla;
         font-size: 14px;
     }
+}
+
+.form-message {
+  margin-top: 26px;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: 'Karla';
+
+  &.success {
+    color: $secondary-color
+  }
+
+  &.error {
+    color: #e74c3c;
+  }
 }

@@ -1,42 +1,92 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
+
+import EmblaCarousel, {
+  EmblaCarouselType,
+  EmblaOptionsType,
+} from 'embla-carousel';
+
+import { TranslatePipe } from '@ngx-translate/core';
+
 import { ReferenceInterface } from '../../interfaces/reference-interface';
 import { ReferenceService } from '../../services/reference-service';
 import { SingleReference } from './single-reference/single-reference';
-import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-feed',
-  imports: [SingleReference, TranslatePipe],
+  standalone: true,
+  imports: [
+    SingleReference,
+    TranslatePipe,
+  ],
   templateUrl: './reference.html',
   styleUrl: './reference.scss',
 })
-export class References implements OnInit {
+export class References implements OnInit, AfterViewInit, OnDestroy {
+
+  @ViewChild('emblaViewport')
+  emblaViewport!: ElementRef<HTMLDivElement>;
+
   references: ReferenceInterface[] = [];
 
-  currentIndex = 1;
-  disableTransition = false;
+  currentIndex = 0;
 
-  constructor(private referenceService: ReferenceService) { }
+  private emblaApi?: EmblaCarouselType;
+
+  private options: EmblaOptionsType = {
+    loop: true,
+    align: 'center',
+    containScroll: 'trimSnaps',
+    duration: 30,
+  };
+
+  constructor(
+    private referenceService: ReferenceService
+  ) { }
 
   ngOnInit(): void {
     this.references = this.referenceService.getReferences();
   }
 
-  next(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.references.length;
+  ngAfterViewInit(): void {
+
+    queueMicrotask(() => {
+
+      this.emblaApi = EmblaCarousel(
+        this.emblaViewport.nativeElement,
+        this.options
+      );
+
+      this.currentIndex = this.emblaApi.selectedScrollSnap();
+
+      this.emblaApi.on('select', () => {
+        this.currentIndex = this.emblaApi!.selectedScrollSnap();
+      });
+
+    });
+
   }
 
   previous(): void {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.references.length) %
-      this.references.length;
+    this.emblaApi?.scrollPrev();
+  }
+
+  next(): void {
+    this.emblaApi?.scrollNext();
   }
 
   goToSlide(index: number): void {
-    this.currentIndex = index;
+    this.emblaApi?.scrollTo(index);
   }
 
-  getTransform(): string {
-    return `translateX(calc(20% - ${this.currentIndex * 60}%))`;
+  ngOnDestroy(): void {
+    this.emblaApi?.destroy();
   }
+
 }

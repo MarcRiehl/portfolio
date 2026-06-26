@@ -10,9 +10,9 @@
         "talk": "Let´s Talk",
         "hello": "Say Hello :)"
     },
-    "textslider":{
-        "based":"Based in Mendig",
-        "developer":"Fullstack Developer",
+    "textslider": {
+        "based": "Based in Mendig",
+        "developer": "Fullstack Developer",
         "available": "Available for remote work",
         "work": "Open to work"
     },
@@ -21,7 +21,7 @@
         "box-headline": "About me",
         "description": {
             "box-description": "As an aspiring full-stack developer, I am fascinated by both the technical challenges of back-end development and the creative design of modern user interfaces. For me, programming combines logical thinking with creative problem-solving and offers the opportunity to bring digital products to life, from the initial idea through to the finished application.",
-            "box-based": "I live in Mendig and prefer to work in a remote-first environment. I am available for occasional in-person meetings at any time.",            
+            "box-based": "I live in Mendig and prefer to work in a remote-first environment. I am available for occasional in-person meetings at any time.",
             "box-technologies": "I’m fascinated by new technologies. Through continuous learning and taking on new challenges, I’m constantly expanding my knowledge.",
             "box-learn": "Analytical thinking, creative problem-solving and teamwork help me to successfully overcome challenges."
         }
@@ -47,7 +47,7 @@
             "next": "Next project"
         }
     },
-    "reference":{
+    "reference": {
         "headline": "What my colleagues say about me"
     },
     "contact": {
@@ -72,9 +72,14 @@
             "policy-second": "privacy policy",
             "policy-third": " and agree to the processing of my data as outlined.",
             "policy-error": "Please accept the privacy policy."
+        },
+        "form-messages": {
+            "success": "Message sent successfully.",
+            "error": "The message could not be sent.",
+            "network": "Network error. Please try again later."
         }
     },
-    "footer":{
+    "footer": {
         "legal": "Legal Notice"
     },
     "privacy": {
@@ -103,5 +108,26 @@
         "right-description1": "As a user, you have the right, upon request, to receive information free of charge about what personal data has been stored about you. You also have the right to have incorrect data rectified and to restrict the processing of or have your personal data erased. Where applicable, you may also exercise your right to data portability. If you believe that your data has been processed unlawfully, you may lodge a complaint with the relevant supervisory authority.",
         "right-description2": "Provided that your request does not conflict with a legal obligation to retain data (e.g. data retention), you have the right to have your data erased. Data stored by us will be deleted if it is no longer required for its intended purpose and there are no statutory retention periods. If deletion cannot be carried out because the data is required for legitimate legal purposes, data processing will be restricted. In this case, the data will be blocked and will not be processed for any other purposes.",
         "right-description3": "Users of this website may exercise their right to object and object to the processing of their personal data at any time. If you wish to request the rectification, restriction, erasure or access to the personal data held about you, or if you have any questions regarding the collection, processing or use of your personal data, or if you wish to withdraw any consent you have given, you will find the contact details in my legal notice."
+    },
+    "legal": {
+        "headline": "Legal Notice",
+        "subline": "Information in accordance with Section 5 of the German Telemedia Act (TMG)",
+        "contact": {
+            "name": "Marc Riehl",
+            "street": "Pellenzstr. 123",
+            "plz": "56743 Mendig",
+            "contact": "Contact:",
+            "phone-name": "Phone:",
+            "phone": "+49 (0)2652 9585067",
+            "mail-name": "Email:",
+            "mail": "info@marc-riehl.de"
+        },
+        "disclaimer": "Disclaimer:",
+        "liability-content-headline": "Liability for content",
+        "liability-content-description": "The content of our website has been compiled with the utmost care. However, we cannot guarantee that the content is accurate, complete or up to date. As a service provider, we are responsible for our own content on this website in accordance with Section 7(1) of the German Telemedia Act (TMG) and general legislation. However, under Sections 8 to 10 of the German Telemedia Act (TMG), we, as a service provider, are not obliged to monitor third-party information that is transmitted or stored, or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information in accordance with general laws remain unaffected by this. However, liability in this regard is only possible from the time we become aware of a specific infringement. Should we become aware of any such infringements, we will remove the content in question immediately.",
+        "liability-links-headline": "Liability for links",
+        "liability-links-description": "Our website contains links to external third-party websites over whose content we have no control. We are therefore unable to accept any liability for this external content. The respective provider or operator of the linked sites is always responsible for their content. The linked sites were checked for any potential legal infringements at the time the links were created. No unlawful content was identifiable at the time the links were created. However, it is not reasonable to expect us to monitor the content of the linked pages on an ongoing basis without specific evidence of a legal infringement. Should we become aware of any legal infringements, we will remove such links immediately.",
+        "copyright-headline": "Copyright",
+        "copyright-description": "The content and works on these pages created by the site operators are subject to German copyright law. The reproduction, adaptation, distribution and any form of use outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are permitted for private, non-commercial use only. Where the content on this site has not been created by the operator, the copyright of third parties is respected. In particular, third-party content is identified as such. Should you nevertheless become aware of any copyright infringement, please notify us accordingly. Upon becoming aware of any infringements, we will remove such content immediately."
     }
 }

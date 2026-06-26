@@ -105,6 +105,11 @@ body {
             align-items: center;
         }
 
+                @include tablet {
+            flex-direction: column;
+            align-items: center;
+        }
+
     }
 
 

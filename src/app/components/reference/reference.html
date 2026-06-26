@@ -1,49 +1,32 @@
 <section id="reference">
     <div class="reference-wrapper">
-
         <div class="reference-headline">
             {{ 'reference.headline' | translate }}
         </div>
-
-        <div class="carousel-wrapper">
-            <div class="carousel-quotes"></div>
-            <div class="carousel-track" [class.no-transition]="disableTransition" [style.transform]="getTransform()">
-
-                @for(reference of references; track reference.id; let i = $index) {
-
-                <div class="slide" [class.active]="i === currentIndex">
-
-                    <app-single-reference [reference]="reference" [isActive]="i === currentIndex">
-                    </app-single-reference>
-
+        <div class="carousel-quotes"></div>
+        <div class="embla">
+            <div class="embla__viewport" #emblaViewport>
+                <div class="embla__container">
+                    @for(reference of references; track reference.id; let i = $index){
+                    <div class="embla__slide" [class.is-active]="i === currentIndex">
+                        <app-single-reference [reference]="reference" [isActive]="i === currentIndex">
+                        </app-single-reference>
+                    </div>
+                    }
                 </div>
-
-                }
-
             </div>
-
         </div>
-
         <div class="slider-navigation">
-
             <button class="nav-arrow-left" (click)="previous()">
             </button>
-
             <div class="bullets">
-
-                @for(reference of references; track reference.id; let i = $index) {
-
+                @for(reference of references; track reference.id; let i = $index){
                 <button class="bullet" [class.active]="i === currentIndex" (click)="goToSlide(i)">
                 </button>
-
                 }
-
             </div>
-
             <button class="nav-arrow-right" (click)="next()">
             </button>
-
         </div>
-
     </div>
 </section>

@@ -1,5 +1,5 @@
 <div class="form-wrapper">
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="sendMailForm" (ngSubmit)="onSubmit()">
         <div class="form-cell">
             <div class="form-cell-label">
                 <label for="name">{{ 'contact.mail.name' | translate }}</label>
@@ -76,8 +76,16 @@
             }
         </div>
         <div class="form-submit">
-            <button class="button__default" type="submit" [disabled]="userForm.invalid">{{ 'buttons.hello' | translate
+            <button class="button__default" type="submit" [disabled]="sendMailForm.invalid">{{ 'buttons.hello' |
+                translate
                 }}</button>
         </div>
     </form>
+    <div class="form-send-message">
+        @if (formMessage) {
+        <div class="form-message" [class.success]="messageType === 'success'" [class.error]="messageType === 'error'">
+            {{ formMessage | translate }}
+        </div>
+        }
+    </div>
 </div>

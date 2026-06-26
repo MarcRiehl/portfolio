@@ -11,7 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 
 export class ContactForm {
-  userForm = new FormGroup({
+  sendMailForm = new FormGroup({
     name: new FormControl('', {
       validators: [Validators.required, Validators.minLength(4)],
       updateOn: 'blur'
@@ -29,26 +29,60 @@ export class ContactForm {
     })
   });
 
-  onSubmit() {
-    if (this.userForm.valid) {
-      console.log(this.userForm.value);
-    }
-  }
-
   get name() {
-    return this.userForm.controls.name;
+    return this.sendMailForm.controls.name;
   }
 
   get email() {
-    return this.userForm.controls.email;
+    return this.sendMailForm.controls.email;
   }
 
   get message() {
-    return this.userForm.controls.message;
+    return this.sendMailForm.controls.message;
   }
 
   get privacyPolicy() {
-    return this.userForm.controls.privacyPolicy;
+    return this.sendMailForm.controls.privacyPolicy;
+  }
+
+  formMessage = '';
+  messageType: 'success' | 'error' | '' = '';
+
+  async onSubmit() {
+    if (this.sendMailForm.valid) {
+      const { name, email, message } = this.sendMailForm.value;
+      try {
+        const httpResponse = await fetch('https://www.marc.riehl.de/send-it/sendMail.de', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message,
+          }),
+        });
+
+        const result = await httpResponse.json();
+
+
+        if (result.success) {
+          this.sendMailForm.reset();
+          this.formMessage = 'contact.form-messages.success';
+          this.messageType = 'success';
+          setTimeout(() => {
+            this.sendMailForm.reset();
+            this.formMessage = '';
+            this.messageType = '';
+          }, 3000);
+        } else {
+          this.formMessage = 'contact.form-messages.error';
+          this.messageType = 'error';
+        }
+      } catch (error) {
+        this.formMessage = 'contact.form-messages.network';
+        this.messageType = 'error';
+      }
+    }
   }
 
 }
