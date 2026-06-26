@@ -37,6 +37,9 @@
     @include tablet {
         justify-content: center;
     }
+      @include desktop {
+        justify-content: center;
+    }
 }
 
 .skill-box {
@@ -120,20 +123,18 @@
 }
 
 
-/* Fallback für alle Browser */
 .speech-bubble {
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* Nur wenn Anchor Positioning unterstützt wird */
 @supports (anchor-name: --anchor) {
     .last-skill {
         anchor-name: --last-skill;
     }
 
     .speech-bubble {
-       position: absolute;
+    position: absolute;
     position-anchor: --skill-anchor;
 
     left: anchor(center);

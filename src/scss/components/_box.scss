@@ -8,7 +8,11 @@
         width: 568px;
         background-color: rgba(61, 207, 182, 0.1);
 
-        @include mobile {
+        @include mobile-tablet {
+            width: 100%;
+            padding: 24px;
+        }
+        @include desktop {
             width: 100%;
             padding: 24px;
         }
@@ -21,7 +25,11 @@
         width: 520px;
         background-color: rgba(61, 207, 182, 0.1);
 
-        @include mobile {
+        @include mobile-tablet {
+            width: 90dvw;
+            padding: 24px;
+        }
+              @include desktop {
             width: 90dvw;
             padding: 24px;
         }
@@ -124,5 +132,8 @@
 
     @include mobile {
         margin-top: 40px;
+    }
+        @include desktop {
+        width: 90dvw;
     }
 }

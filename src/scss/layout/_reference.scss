@@ -36,7 +36,13 @@
         width: 56px;
         height: 40px;
         left: 8%;
-        top: 55px;
+        top: 20px;
+    }
+    @include tablet {
+        width: 56px;
+        height: 40px;
+        left: 18%;
+        top: 20px;
     }
 }
 

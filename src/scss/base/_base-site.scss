@@ -22,6 +22,14 @@ body {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
     z-index: 5;
     top: 0;
+
+    @include mobile-tablet {
+        background: transparent;
+    }
+
+        @include big-screen {
+        background: transparent;
+    }
 }
 
 .wrapper-header {
@@ -47,8 +55,16 @@ body {
         padding: 0 16px;
     }
 
+        @include desktop{
+        padding: 0 16px;
+    }
+
     @include small-mobile {
         padding: 0 16px;
+    }
+    &__reference{
+            display: flex;
+    justify-content: center;
     }
 }
 
@@ -72,6 +88,9 @@ body {
         flex-direction: column;
         height: 100%;
     }
+        @include desktop {
+        flex-direction: column;
+    }
 
     &__height100 {
         display: flex;
@@ -93,6 +112,10 @@ body {
             flex-direction: column;
             height: 100%;
         }
+              @include desktop {
+            flex-direction: column;
+            height: 100%;
+        }
 
     }
 
@@ -105,7 +128,7 @@ body {
             align-items: center;
         }
 
-                @include tablet {
+        @include tablet {
             flex-direction: column;
             align-items: center;
         }
@@ -122,7 +145,11 @@ footer {
 .wrapper-footer {
     width: 100%;
 
-    @include mobile {
+    @include mobile-tablet {
+        padding: 0 16px;
+    }
+
+    @include desktop {
         padding: 0 16px;
     }
 }

@@ -7,7 +7,7 @@ export const routes: Routes = [
     {
         path: "",
         component: MainPage,
-        title: 'Main Page'
+        title: 'Marc Riehl'
     },
     {
         path: "legal-notice",
@@ -22,7 +22,7 @@ export const routes: Routes = [
     {
         path: "**",
         component: MainPage,
-        title: 'Main Page'
+        title: 'Marc Riehl'
     }
 
 ];

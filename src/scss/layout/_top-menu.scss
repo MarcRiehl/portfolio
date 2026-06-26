@@ -45,7 +45,8 @@ header {
 .top-menu-left {
     display: flex;
     align-items: center;
-          @include desktop {
+
+    @include desktop {
         padding-left: 20px;
     }
 }
@@ -73,7 +74,8 @@ header {
     @include mobile-tablet {
         padding-left: 20px;
     }
-        @include desktop {
+
+    @include desktop {
         padding-right: 20px;
     }
 
@@ -99,10 +101,35 @@ header {
 dialog.mobile-menu {
     position: absolute;
     top: 98px;
-    left: 20%;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0;
-
 }
+
+
+@supports (anchor-name: --hamburger-anchor) {
+
+    .hamburger {
+        anchor-name: --hamburger-anchor;
+    }
+
+    dialog.mobile-menu {
+        position: absolute;
+        position-anchor: --hamburger-anchor;
+
+        right: anchor(right);
+        top: anchor(bottom);
+        translate: 0 10px;
+        margin: 0;
+        
+        @include tablet{
+           translate: 0 10px; 
+        }
+    }
+}
+
+
+
 
 .mobile-menu {
     width: min(260px, 90vw);
@@ -131,7 +158,8 @@ dialog.mobile-menu {
     color: $primary-color;
     font-size: 18px;
     letter-spacing: -3%;
-    &:active{
+
+    &:active {
         color: $secondary-color;
     }
 }

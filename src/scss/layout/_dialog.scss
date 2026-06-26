@@ -4,9 +4,18 @@ dialog {
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     margin: 0 auto;
 
-    @include mobile {
+    @include mobile-tablet {
         max-width: none;
         max-height: none;
+    }
+
+    @include small-mobile {
+        max-width: none;
+        max-height: none;
+    }
+
+    @include desktop-hd {
+        top: calc(100dvh / 6);
     }
 
 }
@@ -38,8 +47,9 @@ body.dialog-open {
     justify-content: space-between;
     align-items: center;
 
-    @include mobile {
+    @include mobile-tablet {
         flex-wrap: wrap-reverse;
+        justify-content: center;
     }
 }
 
@@ -59,8 +69,13 @@ body.dialog-open {
     padding: 40px 80px;
     border: 1px solid $secondary-color;
 
-    @include mobile {
+    @include mobile-tablet {
         height: 100dvh;
+        width: 95dvw;
+        padding: 20px 20px;
+    }
+
+    @include desktop {
         width: 95dvw;
         padding: 20px 20px;
     }
@@ -71,7 +86,7 @@ body.dialog-open {
     display: flex;
     justify-content: flex-end;
 
-    @include mobile {
+    @include mobile-tablet {
         padding-bottom: 20px;
     }
 }
@@ -97,6 +112,11 @@ body.dialog-open {
     @include mobile {
         align-items: flex-end;
         padding-top: 40px;
+    }
+
+    @include tablet {
+        align-items: flex-end;
+        padding-top: 20px;
 
     }
 
@@ -146,9 +166,13 @@ body.dialog-open {
 .dialog-left {
     padding-right: 80px;
 
-    @include mobile {
+    @include mobile-tablet {
         padding-right: 0px;
     }
+        @include desktop {
+        padding-right: 0px;
+    }
+
 }
 
 .dialog-id {
@@ -158,9 +182,19 @@ body.dialog-open {
     color: $secondary-color;
     letter-spacing: -2%;
 
-    @include mobile {
+    @include mobile-tablet {
         font-size: 72px;
         padding-top: 20px;
+    }
+
+        @include desktop {
+        font-size: 72px;
+        padding-top: 20px;
+    }
+
+    @include small-mobile {
+        font-size: 56px;
+        padding-top: 10px;
     }
 }
 
@@ -171,7 +205,15 @@ body.dialog-open {
     line-height: 80%;
     letter-spacing: -3%;
 
-    @include mobile {
+    @include mobile-tablet {
+        font-size: 56px;
+    }
+
+    @include small-mobile {
+        font-size: 32px;
+    }
+
+        @include desktop {
         font-size: 56px;
     }
 
@@ -184,9 +226,14 @@ body.dialog-open {
     color: $secondary-color;
     padding: 24px 0 16px 0;
 
-    @include mobile {
+    @include mobile-tablet {
         font-size: 20px;
     }
+
+        @include desktop {
+        font-size: 20px;
+    }
+
 
 }
 
@@ -197,7 +244,7 @@ body.dialog-open {
     line-height: 120%;
     width: 480px;
 
-    @include mobile {
+    @include mobile-tablet {
         font-size: 16px;
         width: 100%;
         flex-wrap: wrap;
@@ -209,7 +256,7 @@ body.dialog-open {
     align-items: center;
     padding: 16px 0;
 
-    @include mobile{
+    @include mobile-tablet {
         flex-wrap: wrap;
     }
 }
@@ -220,7 +267,7 @@ body.dialog-open {
 
     gap: 24px;
 
-    @include mobile {
+    @include mobile-tablet {
         gap: 20px;
         justify-content: center;
     }
@@ -236,7 +283,7 @@ body.dialog-open {
 .dialog-icon-technologie {
     padding-right: 8px;
 
-    @include mobile {
+    @include mobile-tablet {
         width: 20px;
         height: 20px;
         margin-right: 8px;
@@ -264,5 +311,15 @@ body.dialog-open {
     @include mobile {
         width: 100%;
         height: 100%;
+    }
+
+    @include tablet {
+        justify-self: center;
+        margin: 0 auto;
+
+    }
+    @include desktop {
+       width: auto;
+    height: 160px;
     }
 }

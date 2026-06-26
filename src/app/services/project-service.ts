@@ -13,8 +13,8 @@ export class ProjectService {
       shortDescription: 'Jump & Run Game',
       description: 'portfolio.modal.description-shadow-path',
       previewImage: './assets/img/projects/projects-img/project-shadow-path.jpg',
-      url: '',
-      github: '',
+      url: 'https://shadow-path.marc-riehl.de',
+      github: 'https://github.com/MarcRiehl/shadow-path/',
       technologies: [
         {
           name: 'HTML',
