@@ -7,31 +7,8 @@ import { ProjectInterface } from '../interfaces/project-interface';
 export class ProjectService {
 
   private projects: ProjectInterface[] = [
-    {
+        {
       id: '01',
-      title: 'Shadow-Path',
-      shortDescription: 'Jump & Run Game',
-      description: 'portfolio.modal.description-shadow-path',
-      previewImage: './assets/img/projects/projects-img/project-shadow-path.jpg',
-      url: 'https://shadow-path.marc-riehl.de',
-      github: 'https://github.com/MarcRiehl/shadow-path/',
-      technologies: [
-        {
-          name: 'HTML',
-          logo: './assets/img/projects/icons/html.svg'
-        },
-        {
-          name: 'CSS',
-          logo: './assets/img/projects/icons/css.svg'
-        },
-        {
-          name: 'Javascript',
-          logo: './assets/img/projects/icons/javascript.svg'
-        }
-      ]
-    },
-    {
-      id: '02',
       title: 'Join',
       shortDescription: 'Jump & Run Game',
       description: 'portfolio.modal.description-join',
@@ -58,6 +35,29 @@ export class ProjectService {
         {
           name: 'TypeScript',
           logo: './assets/img/projects/icons/typescript.svg'
+        }
+      ]
+    },
+    {
+      id: '02cs ',
+      title: 'Shadow-Path',
+      shortDescription: 'Jump & Run Game',
+      description: 'portfolio.modal.description-shadow-path',
+      previewImage: './assets/img/projects/projects-img/project-shadow-path.jpg',
+      url: 'https://shadow-path.marc-riehl.de',
+      github: 'https://github.com/MarcRiehl/shadow-path/',
+      technologies: [
+        {
+          name: 'HTML',
+          logo: './assets/img/projects/icons/html.svg'
+        },
+        {
+          name: 'CSS',
+          logo: './assets/img/projects/icons/css.svg'
+        },
+        {
+          name: 'Javascript',
+          logo: './assets/img/projects/icons/javascript.svg'
         }
       ]
     }
