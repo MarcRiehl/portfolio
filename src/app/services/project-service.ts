@@ -39,7 +39,7 @@ export class ProjectService {
       ]
     },
     {
-      id: '02cs ',
+      id: '02',
       title: 'Shadow-Path',
       shortDescription: 'Jump & Run Game',
       description: 'portfolio.modal.description-shadow-path',
