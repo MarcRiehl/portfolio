@@ -25,8 +25,8 @@ export class ProjectService {
           logo: './assets/img/projects/icons/css.svg'
         },
         {
-          name: 'Firebase',
-          logo: './assets/img/projects/icons/firebase.svg'
+          name: 'Supabase',
+          logo: './assets/img/projects/icons/supabase.svg'
         },
         {
           name: 'Angular',
