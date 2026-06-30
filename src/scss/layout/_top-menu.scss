@@ -44,6 +44,11 @@ header {
     display: flex;
     align-items: center;
 
+
+    @include tablet {
+        padding-left: 16px;
+    }
+
     @include desktop {
         padding-left: 16px;
     }
@@ -88,7 +93,6 @@ header {
     @include desktop-l {
         padding-right: 16px;
     }
-
 }
 
 .hamburger {
