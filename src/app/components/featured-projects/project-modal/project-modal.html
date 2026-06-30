@@ -1,4 +1,4 @@
-<dialog #dialog class="project-dialog" (close)="onDialogClose()">
+<dialog #dialog class="project-dialog" (close)="onDialogClose()" closedby="any">
     <div class="flex-dialog-close">
         <button class="close-btn" (click)="closeDialog()">
         </button>
@@ -29,10 +29,11 @@
         </div>
     </div>
     <div class="navigation">
-        <button type="button" (click)="next.emit()">
-            <span>{{ 'portfolio.modal.next' | translate }}</span>
-        </button>
-
+        <div>
+            <button type="button" (click)="next.emit()">
+                <span>{{ 'portfolio.modal.next' | translate }}</span>
+            </button>
+        </div>
     </div>
 
 </dialog>

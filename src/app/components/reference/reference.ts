@@ -5,6 +5,8 @@ import {
   OnDestroy,
   ViewChild,
   ElementRef,
+  ChangeDetectorRef, 
+  NgZone
 } from '@angular/core';
 
 import EmblaCarousel, {
@@ -47,7 +49,9 @@ export class References implements OnInit, AfterViewInit, OnDestroy {
   };
 
   constructor(
-    private referenceService: ReferenceService
+    private referenceService: ReferenceService,
+    private ngZone: NgZone,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -65,12 +69,16 @@ export class References implements OnInit, AfterViewInit, OnDestroy {
 
       this.currentIndex = this.emblaApi.selectedScrollSnap();
 
-      this.emblaApi.on('select', () => {
-        this.currentIndex = this.emblaApi!.selectedScrollSnap();
-      });
+      const updateIndex = () => {
+        this.ngZone.run(() => {
+          this.currentIndex = this.emblaApi!.selectedScrollSnap();
+          this.cdr.detectChanges();
+        });
+      };
 
+      this.emblaApi.on('select', updateIndex);
+      this.emblaApi.on('settle', updateIndex);
     });
-
   }
 
   previous(): void {

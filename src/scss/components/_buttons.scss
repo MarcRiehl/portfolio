@@ -53,8 +53,6 @@
             opacity: 0.5;
             cursor: not-allowed;
         }
-
-
     }
 
     &__text {
@@ -62,6 +60,7 @@
 
         @include mobile {
             font-size: 16px;
+            letter-spacing: -3%;
         }
 
     }
