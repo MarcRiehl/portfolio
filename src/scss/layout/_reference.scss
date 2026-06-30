@@ -20,11 +20,17 @@
         font-size: 24px;
         text-align: center;
     }
+
+    @include small-mobile {
+        font-size: 24px;
+        text-align: center;
+        padding: 0 8px;
+    }
 }
 
 .carousel-quotes {
     position: relative;
-    left: 28%;
+    left: 23%;
     top: 40px;
     width: 90px;
     height: 64px;
@@ -35,22 +41,31 @@
     @include mobile {
         width: 56px;
         height: 40px;
-        left: 8%;
+        left: 14%;
         top: 20px;
     }
+
     @include tablet {
-        width: 56px;
-        height: 40px;
-        left: 18%;
-        top: 20px;
+        width: 72px;
+        height: 51px;
+        left: 15%;
+        top: 30px;
     }
 }
 
 
 .embla {
-    overflow: hidden;
-    width: 100%;
     position: relative;
+    margin: auto;
+
+    --slide-height: 19rem;
+    --slide-spacing: 3rem;
+    --slide-size: 50%;
+
+    @include mobile-tablet {
+        --slide-spacing: 1rem;
+        --slide-size: 70%;
+    }
 }
 
 .embla__viewport {
@@ -59,37 +74,38 @@
 
 .embla__container {
     display: flex;
-
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
 }
 
 .embla__slide {
-    flex: 0 0 40%;
-    transition: transform .35s ease, opacity .35s ease;
     opacity: .6;
-    transform: scale(.9);
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
 }
 
 .embla__slide.is-active {
     opacity: 1;
-    transform: scale(1);
 }
 
-@include tablet {
+// @include tablet {
 
-    .embla__slide {
-        flex: 0 0 60%;
-    }
+//     .embla__slide {
+//         flex: 0 0 60%;
+//     }
 
-}
+// }
 
-@include mobile {
+// @include mobile {
 
-    .embla__slide {
-        flex: 0 0 80%;
-        padding: 0 8px;
-    }
+//     .embla__slide {
+//         flex: 0 0 80%;
+//         padding: 0 8px;
+//     }
 
-}
+// }
 
 .reference-card {
     width: 100%;
@@ -107,8 +123,8 @@
     background: rgba(61, 207, 182, .1);
 
     transition:
-        transform .35s ease,
-        background .35s ease;
+        transform .35s ease;
+    transform: scale(0.9);
 
     @include mobile {
         padding: 24px;
@@ -117,6 +133,7 @@
 
 .reference-card.active {
     background: rgba(61, 207, 182, .3);
+    transform: scale(1);
 }
 
 
@@ -125,14 +142,14 @@
     font-size: 18px;
     line-height: 120%;
     text-align: center;
-    color:$primary-color;
+    color: $primary-color;
 }
 
 .reference-author {
-     font-family: Karla;
+    font-family: Karla;
     line-height: 120%;
     text-align: right;
-     color:$primary-color;
+    color: $primary-color;
 }
 
 .author-box {
