@@ -60,7 +60,11 @@
 
         @include mobile {
             font-size: 16px;
-            letter-spacing: -3%;
+
+        }
+
+        @include small-mobile {
+            letter-spacing: -10%;
         }
 
     }

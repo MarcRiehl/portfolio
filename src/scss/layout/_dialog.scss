@@ -3,6 +3,10 @@
 dialog {
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @include mobile-tablet {
         max-width: none;
@@ -13,13 +17,7 @@ dialog {
         max-width: none;
         max-height: none;
     }
-
-    @include desktop-hd {
-        top: calc(100dvh / 6);
-    }
-
 }
-
 
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.4);
@@ -47,11 +45,40 @@ body.dialog-open {
     justify-content: space-between;
     align-items: center;
 
+
     @include mobile-tablet {
         flex-wrap: wrap-reverse;
         justify-content: center;
+        max-height: 80dvh;
+
+    }
+
+    @include small-mobile {
+        overflow-y: auto;
+        padding-right: 8px;
+        min-height: 0;
     }
 }
+
+.dialog-wrapper-inner::-webkit-scrollbar {
+    width: 14px;
+}
+
+.dialog-wrapper-inner::-webkit-scrollbar-track {
+    background: $primary-bg-color;
+}
+
+.dialog-wrapper-inner::-webkit-scrollbar-thumb {
+    background: $secondary-color;
+    border-radius: 6px;
+    border: 4px solid $primary-bg-color;
+    background-clip: content-box;
+}
+
+.dialog-wrapper-inner::-webkit-scrollbar-thumb:hover {
+    background: $secondary-color;
+}
+
 
 .backdrop {
     position: fixed;
@@ -68,6 +95,8 @@ body.dialog-open {
     border-radius: 30px;
     padding: 40px 80px;
     border: 1px solid $secondary-color;
+    display: grid;
+    grid-template-rows: auto 1fr;
 
     @include mobile-tablet {
         height: 100dvh;
@@ -77,9 +106,16 @@ body.dialog-open {
 
     @include desktop {
         width: 95dvw;
-        padding: 20px 20px;
+        padding: 40px 40px;
     }
+        @include desktop-l {
+   
+    }
+}
 
+.dialog-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 .flex-dialog-close {
@@ -88,6 +124,10 @@ body.dialog-open {
 
     @include mobile-tablet {
         padding-bottom: 20px;
+    }
+
+    @include small-mobile {
+        padding-bottom: 10px;
     }
 }
 
@@ -104,21 +144,9 @@ body.dialog-open {
 }
 
 .navigation {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
+    align-self: center;
+    justify-self: end;
 
-    @include mobile {
-        align-items: flex-end;
-        padding-top: 20px;
-    }
-
-    @include tablet {
-        align-items: flex-end;
-        padding-top: 20px;
-
-    }
 
     button {
         cursor: pointer;
@@ -169,7 +197,8 @@ body.dialog-open {
     @include mobile-tablet {
         padding-right: 0px;
     }
-        @include desktop {
+
+    @include desktop {
         padding-right: 0px;
     }
 
@@ -187,7 +216,7 @@ body.dialog-open {
         padding-top: 20px;
     }
 
-        @include desktop {
+    @include desktop {
         font-size: 72px;
         padding-top: 20px;
     }
@@ -213,7 +242,7 @@ body.dialog-open {
         font-size: 32px;
     }
 
-        @include desktop {
+    @include desktop {
         font-size: 56px;
     }
 
@@ -230,7 +259,7 @@ body.dialog-open {
         font-size: 20px;
     }
 
-        @include desktop {
+    @include desktop {
         font-size: 20px;
     }
 
@@ -255,16 +284,17 @@ body.dialog-open {
     display: flex;
     align-items: center;
     padding: 16px 0;
+    min-width: 520px;
 
     @include mobile-tablet {
         flex-wrap: wrap;
+         min-width: 0px;
     }
 }
 
 .dialog-buttons {
     padding: 32px 0 0 0;
     display: flex;
-
     gap: 24px;
 
     @include mobile-tablet {
@@ -305,21 +335,34 @@ body.dialog-open {
 
 .dialog-img img {
     border-radius: 30px;
-    width: 520px;
-    height: auto;
+    width: 480px;
+    height: 320px;
+
 
     @include mobile {
         width: 100%;
         height: 100%;
+        max-height: 300px;
     }
 
     @include tablet {
         justify-self: center;
         margin: 0 auto;
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+    }
 
-    }
     @include desktop {
-       width: auto;
-    height: 160px;
+        width: 100%;
+        height: auto;
+        max-width: 520px;
     }
+
+    @include desktop-l {
+        height: auto;
+         max-width: 480px;
+    }
+
+
 }

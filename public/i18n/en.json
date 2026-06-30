@@ -41,7 +41,7 @@
         "headline-box": "Featured Projects",
         "description": "Discover my projects – from intuitive user interfaces to high-performance backend solutions.",
         "modal": {
-            "headline": "What is this prject about?",
+            "headline": "What is this project about?",
             "description-shadow-path": "Jump, run and throw game based on object-oriented approach. Help Angel to find coins and magic to fight against the crazy troll.",
             "description-join": "Task manager inspired by the Kanban System- Create amd organize tasks using drag and drop functions, assign users and categories.",
             "next": "Next project"

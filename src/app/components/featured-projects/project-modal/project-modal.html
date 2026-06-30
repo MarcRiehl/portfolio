@@ -3,6 +3,7 @@
         <button class="close-btn" (click)="closeDialog()">
         </button>
     </div>
+    <div class="dialog-content">
     <div class="dialog-wrapper-inner">
         <div class="dialog-left">
             <h2 class="dialog-id">{{project.id}}</h2>
@@ -29,11 +30,9 @@
         </div>
     </div>
     <div class="navigation">
-        <div>
             <button type="button" (click)="next.emit()">
                 <span>{{ 'portfolio.modal.next' | translate }}</span>
             </button>
-        </div>
     </div>
-
+</div>
 </dialog>
