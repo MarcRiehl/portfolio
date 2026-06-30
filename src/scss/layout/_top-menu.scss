@@ -186,7 +186,7 @@ dialog.mobile-menu {
 }
 
 
-@media (max-width: 810px) {
+@include mobile-tablet {
 
     .hide-mobil {
         display: none;
