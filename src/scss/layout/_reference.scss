@@ -16,8 +16,11 @@
     font-weight: bold;
     padding-bottom: 0px;
 
-    @include mobile {
+    @include mobile{
         font-size: 24px;
+        text-align: center;
+    }
+        @include tablet{
         text-align: center;
     }
 
@@ -89,23 +92,6 @@
 .embla__slide.is-active {
     opacity: 1;
 }
-
-// @include tablet {
-
-//     .embla__slide {
-//         flex: 0 0 60%;
-//     }
-
-// }
-
-// @include mobile {
-
-//     .embla__slide {
-//         flex: 0 0 80%;
-//         padding: 0 8px;
-//     }
-
-// }
 
 .reference-card {
     width: 100%;

@@ -22,7 +22,11 @@
 }
 
 .wrapper-skills {
-    background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%)
+    background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+
+          @include desktop {
+        margin-top: 60px;
+    }
 }
 
 .skills-container {
@@ -51,7 +55,6 @@
     padding-top: 32px;
 
     @include mobile {
-        width: 90dvw;
         grid-template-columns: repeat(3, 1fr);
         gap: 26px;
         margin-top: 20px;
@@ -59,7 +62,9 @@
     }
 
     @include tablet {
-        width: 90dvw;
+        grid-template-columns: repeat(3, 1fr);
+    }
+        @include desktop{
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -103,6 +108,12 @@
         font-size: 16px;
         text-align: center;
     }
+        @include small-mobile {
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: -6%;
+    }
+
 }
 
 .last-skill:hover .skill-name {

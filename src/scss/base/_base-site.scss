@@ -14,6 +14,21 @@ body {
     background-color: $primary-bg-color;
 }
 
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 16px;
+
+    @include desktop-hd {
+        padding-inline: 0px;
+    }
+
+    @include mobile {
+        padding-inline: 8px;
+    }
+}
+
 .wrapper-top-menu {
     position: absolute;
     width: 100%;
@@ -27,7 +42,7 @@ body {
         background: transparent;
     }
 
-        @include big-screen {
+    @include big-screen {
         background: transparent;
     }
 }
@@ -47,24 +62,28 @@ body {
     display: flex;
     justify-content: center;
 
-    @include mobile {
-        padding: 0 16px;
+    // @include mobile {
+    //     padding: 0 16px;
+    // }
+
+    // @include tablet {
+    //     padding: 0 16px;
+    // }
+
+    @include desktop {
+        margin-top: 60px;
     }
 
-    @include tablet {
-        padding: 0 16px;
-    }
+    // @include small-mobile {
+    //     padding: 0 16px;
+    // }
+    &__reference {
+        display: flex;
+        justify-content: center;
 
-        @include desktop{
-        padding: 0 16px;
-    }
-
-    @include small-mobile {
-        padding: 0 16px;
-    }
-    &__reference{
-            display: flex;
-    justify-content: center;
+        @include tablet {
+            margin-top: 60px;
+        }
     }
 }
 
@@ -87,9 +106,11 @@ body {
     @include tablet {
         flex-direction: column;
         height: 100%;
+        align-items: flex-start;
     }
-        @include desktop {
-        flex-direction: column;
+
+    @include desktop {
+        align-items: flex-start;
     }
 
     &__height100 {
@@ -112,8 +133,18 @@ body {
             flex-direction: column;
             height: 100%;
         }
-              @include desktop {
-            flex-direction: column;
+
+        @include desktop {
+            align-items: flex-start;
+            height: 100%;
+        }
+
+        @include desktop-l {
+
+            height: 100%;
+        }
+
+        @include big-screen {
             height: 100%;
         }
 
@@ -144,14 +175,6 @@ footer {
 
 .wrapper-footer {
     width: 100%;
-
-    @include mobile-tablet {
-        padding: 0 16px;
-    }
-
-    @include desktop {
-        padding: 0 16px;
-    }
 }
 
 h1 {

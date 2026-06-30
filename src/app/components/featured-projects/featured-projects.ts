@@ -45,7 +45,7 @@ export class FeaturedProjects implements OnInit {
       itemRect.top -
       wrapperRect.top +
       itemRect.height / 2 -
-      96;
+      48;
   }
 
   clearPreview() {

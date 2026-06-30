@@ -5,7 +5,8 @@
     @include mobile-tablet {
         margin-top: 80px;
     }
-        @include desktop{
+
+    @include desktop {
         margin-top: 80px;
     }
 }
@@ -20,7 +21,15 @@
         height: 100%;
     }
 
+    @include tablet {
+        width: 70%;
+        height: 70%;
+    }
 
+    @include desktop {
+        width: 50%;
+        height: auto;
+    }
 
 
     &::after {
@@ -42,6 +51,17 @@
             left: -10px;
             top: 12px;
         }
+
+        @include tablet {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include desktop {
+            width: 100%;
+            height: 100%;
+        }
+
     }
 
     &:hover::after {
@@ -57,8 +77,20 @@
     position: relative;
     z-index: 1;
 
-    @include mobile {
+    @include mobile-tablet {
         width: 100%;
         height: 100%;
     }
+
+
+    @include desktop {
+        width: 100%;
+        height: 100%;
+    }
+
+    @include desktop-l {
+        width: 100%;
+        height: 100%;
+    }
+
 }

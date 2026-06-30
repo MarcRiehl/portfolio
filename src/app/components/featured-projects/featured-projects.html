@@ -23,11 +23,8 @@
                         }
                     </div>
                 </div>
-
                 }
-
             </div>
-
             <div class="project-preview" [class.has-preview]="hoveredProject" [style.top.px]="previewTop">
                 @if(hoveredProject) {
                 <img [src]="hoveredProject.previewImage" [alt]="hoveredProject.title">
@@ -41,6 +38,4 @@
         (previous)="showPreviousProject()">
     </app-project-modal>
     }
-
-
 </section>

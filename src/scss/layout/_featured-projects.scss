@@ -1,23 +1,29 @@
 @use '../abstract/' as *;
 
-.wrapper-projects {}
-
-#projects {
-    margin-bottom: 128px;
-
-    @include mobile {
-      margin-bottom: 80px;
-    }
-}
+#projects {}
 
 .projects {
     width: 100%;
+    min-height: 340px;
+
+    @include mobile-tablet {
+        min-height: 0px;
+        margin-bottom: 80px;
+    }
+
+    @include desktop {
+        min-height: 300px;
+    }
 }
 
 .project-wrapper {
     display: flex;
     position: relative;
     gap: 80px;
+
+    @include desktop {
+        gap: 40px;
+    }
 }
 
 .project-list {
@@ -29,6 +35,14 @@
 
     @include tablet {
         width: 100%;
+    }
+
+    @include mobile-tablet-hover {
+        width: 100%;
+    }
+
+    @include desktop {
+        width: 70%;
     }
 }
 
@@ -67,9 +81,9 @@
 }
 
 .project-preview {
-    position: absolute;
+    position: relative;
     right: 0;
-    width: 296px;
+    width: 30%;
     pointer-events: none;
     transition: top 250ms ease;
 
@@ -77,6 +91,18 @@
         width: 296px;
         height: 192px;
         border-radius: 16px;
+
+        @include desktop {
+            width: 240px;
+            height: 156px;
+        }
+
+        @include desktop-l {
+            width: 300px;
+            height: 195px;
+        }
+
+
     }
 
     &::after {
@@ -90,6 +116,21 @@
         background: url('/assets/img/projects/img-background-hover.svg') center center / cover no-repeat;
         opacity: 0;
         z-index: -1; // hinter dem Bild
+
+        @include desktop {
+            width: 240px;
+            height: 156px;
+            right: -10px;
+            bottom: -10px;
+        }
+
+        @include desktop-l {
+            width: 300px;
+            height: 195px;
+            right: -10px;
+            bottom: -10px;
+        }
+
     }
 
     &.has-preview::after {
@@ -101,6 +142,10 @@
     }
 
     @include tablet {
+        display: none !important;
+    }
+
+    @include mobile-tablet-hover {
         display: none !important;
     }
 

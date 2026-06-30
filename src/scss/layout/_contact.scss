@@ -10,10 +10,12 @@
 
     @include mobile {
         width: 100%;
+         padding-right: 0px;
     }
 
         @include tablet {
         width: 100%;
+        padding-right: 0px;
     }
 }
 
@@ -22,6 +24,7 @@
 
         @include mobile {
         width: 100%;
+  
     }
             @include tablet {
         width: 100%;
@@ -62,8 +65,7 @@
 .form-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .form-wrapper {

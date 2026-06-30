@@ -4,8 +4,6 @@ header {
     width: 100%;
 }
 
-.link-language-switch {}
-
 .switch-en {
     width: 84px;
     height: 28px;
@@ -47,7 +45,11 @@ header {
     align-items: center;
 
     @include desktop {
-        padding-left: 20px;
+        padding-left: 16px;
+    }
+
+    @include desktop-l {
+        padding-left: 16px;
     }
 }
 
@@ -71,12 +73,20 @@ header {
 .logo {
     width: 120px;
 
-    @include mobile-tablet {
-        padding-left: 20px;
+    @include mobile {
+        padding-left: 8px;
+    }
+
+    @include tablet {
+        padding-left: 16px;
     }
 
     @include desktop {
-        padding-right: 20px;
+        padding-right: 16px;
+    }
+
+    @include desktop-l {
+        padding-right: 16px;
     }
 
 }
@@ -93,8 +103,13 @@ header {
         background: url("/assets/img/mobil/hamburger-press.svg");
     }
 
-    @include mobile-tablet {
-        margin-right: 20px;
+    @include mobile {
+        margin-right: 8px;
+    }
+
+
+    @include tablet {
+        margin-right: 16px;
     }
 }
 
@@ -104,6 +119,7 @@ dialog.mobile-menu {
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
+
 }
 
 
@@ -121,15 +137,16 @@ dialog.mobile-menu {
         top: anchor(bottom);
         translate: 0 10px;
         margin: 0;
-        
-        @include tablet{
-           translate: 0 10px; 
+
+        @include tablet {
+            translate: 0 10px;
+        }
+
+        @include landscape {
+            translate: 0 -10%;
         }
     }
 }
-
-
-
 
 .mobile-menu {
     width: min(260px, 90vw);

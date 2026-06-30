@@ -3,18 +3,12 @@
 .header-content {
     max-width: 1440px;
     display: grid;
-     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: end;
     color: #FFF;
     height: 100dvh;
     width: calc(100dvw - 32px);
     justify-content: center;
-
-    @include mobile{
-        width: 100%;
-    }
-
-
 
     @include landscape {
         height: 100dvh;
@@ -74,8 +68,11 @@
         margin-left: 16px;
     }
 
+        @include desktop-l {
+        margin-left: 16px;
+    }
     @include mobile {
-        left: 16px;
+        left: 8px;
     }
 
     @include tablet {
@@ -95,11 +92,19 @@
     position: relative;
     z-index: 0;
 
+    @include mobile{
+        right: 8px;
+    }
+
     @include tablet {
         right: 16px;
     }
 
     @include desktop {
+        margin-right: 16px;
+    }
+
+    @include desktop-l {
         margin-right: 16px;
     }
 }
@@ -188,8 +193,7 @@
 
     @include mobile {
         gap: 20px;
-        position: relative;
-        right: 20px;
+
     }
 
     @include landscape {
@@ -218,11 +222,12 @@
         opacity: 0;
         transition: opacity 0.2s ease;
 
-        @include mobile-tablet{
-            right: -5px;
+        @include mobile-tablet {
+            right: -10px;
         }
-            @include desktop{
-            right: -5px;
+
+        @include desktop {
+            right: -8px;
         }
     }
 
@@ -253,11 +258,11 @@
     width: 0;
     margin-bottom: -15px;
 
-@include mobile-tablet {
-    transform: rotate(0deg);
-    margin-bottom: 0px;
-      width: 100%;
-}
+    @include mobile-tablet {
+        transform: rotate(0deg);
+        margin-bottom: 0px;
+        width: 100%;
+    }
 
 }
 
