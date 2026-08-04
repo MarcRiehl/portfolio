@@ -23,7 +23,7 @@
     }
     @include big-screen{
         max-width: 1280px;
-        min-height: 100dvh;
+        min-height: calc(100dvh - 305px);
     }
 }
 

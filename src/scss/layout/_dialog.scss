@@ -50,36 +50,61 @@ body.dialog-open {
     justify-content: space-between;
     align-items: center;
 
-
-    @include mobile-tablet {
+    @include mobile {
         flex-wrap: wrap-reverse;
         justify-content: center;
-        max-height: 80dvh;
+        min-height: 0;
+        align-items: flex-start;
+    }
+
+
+    @include tablet {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
         align-items: flex-start;
 
     }
 
     @include small-mobile {
-        overflow-y: auto;
-        padding-right: 8px;
         min-height: 0;
         align-items: flex-start;
     }
 
     @include landscape {
-        overflow-y: auto;
         min-height: 0;
-        align-items: flex-start;
-        padding: 20px 0 20px 0;
-        margin-top: 30px;
+        // align-items: flex-start;
+        padding: 20px 0 10px 0;
+        // margin-top: 30px;
         // margin-bottom: 0px;
         // max-height: 230px;
-        max-height: calc(100dvh - 100px);
-        margin-right: 20px;
+        // max-height: calc(100dvh - 100px);
+        // margin-right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
     }
 }
 
-.dialog-wrapper-inner::-webkit-scrollbar {
+.dialog-scroll {
+    @include mobile {
+        overflow-y: auto;
+        height: 46dvh;
+    }
+
+    @include small-mobile {
+        overflow-y: auto;
+        max-height: 48dvh;
+    }
+
+    @include landscape {
+        overflow-y: auto;
+        max-height: 50dvh;
+        width: 90%;
+    }
+}
+
+.dialog-scroll::-webkit-scrollbar {
     width: 14px;
 
     @include landscape {
@@ -87,18 +112,18 @@ body.dialog-open {
     }
 }
 
-.dialog-wrapper-inner::-webkit-scrollbar-track {
+.dialog-scroll::-webkit-scrollbar-track {
     background: $primary-bg-color;
 }
 
-.dialog-wrapper-inner::-webkit-scrollbar-thumb {
+.dialog-scroll::-webkit-scrollbar-thumb {
     background: $secondary-color;
     border-radius: 6px;
     border: 4px solid $primary-bg-color;
     background-clip: content-box;
 }
 
-.dialog-wrapper-inner::-webkit-scrollbar-thumb:hover {
+.dialog-scroll::-webkit-scrollbar-thumb:hover {
     background: $secondary-color;
 }
 
@@ -132,6 +157,13 @@ body.dialog-open {
         padding: 40px 40px;
     }
 
+
+    @include small-mobile {
+        height: 100dvh;
+        width: 95dvw;
+        padding: 10px 10px;
+    }
+
     @include landscape {
         height: 100dvh;
         width: 95dvw;
@@ -148,12 +180,16 @@ body.dialog-open {
     display: flex;
     justify-content: flex-end;
 
-    @include mobile-tablet {
+    @include mobile {
+        padding-bottom: 0px;
+    }
+
+    @include tablet {
         padding-bottom: 20px;
     }
 
     @include small-mobile {
-        padding-bottom: 10px;
+        padding-bottom: 0px;
 
     }
 
@@ -411,6 +447,9 @@ body.dialog-open {
     min-height: 0;
     min-width: 0;
 
+
+    @include small-mobile {}
+
 }
 
 .dialog-img img {
@@ -425,6 +464,8 @@ body.dialog-open {
     @include mobile {
         width: 75%;
         height: 75%;
+        max-height: 200px;
+        padding-bottom: 10px;
     }
 
     @include tablet {
@@ -446,9 +487,21 @@ body.dialog-open {
         max-width: 480px;
     }
 
+    @include desktop-plus {
+        height: auto;
+        max-width: 480px;
+    }
+
+    @include small-mobile {
+        width: 80%;
+        height: 80%;
+        max-height: 180px;
+        padding-bottom: 10px;
+    }
+
     @include landscape {
-        width: 90%;
-        height: 90%;
-        max-height: 200px;
+        width: 100%;
+        height: 100%;
+        max-height: 320px;
     }
 }

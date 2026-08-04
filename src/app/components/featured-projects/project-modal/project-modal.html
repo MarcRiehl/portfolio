@@ -6,10 +6,12 @@
     <div class="dialog-content">
     <div class="dialog-wrapper-inner">
         <div class="dialog-left">
+            <div class="dialog-scroll">
             <h2 class="dialog-id">{{project.id}}</h2>
             <h2 class="dialog-title">{{ project.title }}</h2>
             <div class="dialog-subline">{{ 'portfolio.modal.headline' | translate }}</div>
             <div class="dialog-description">{{ project.description | translate }}</div>
+
             <div class="dialog-technologies">
                 @for(tech of project.technologies; track tech.name) {
                 <div class="dialog-list-technologie">
@@ -17,6 +19,7 @@
                     <div class="dialog-name-technologie">{{ tech.name }}</div>
                 </div>
                 }
+            </div>
             </div>
             <div class="dialog-buttons">
                 <button class="button__external-link"><a href="{{ project.github }}" target="_blank"><span
