@@ -1,0 +1,110 @@
+@use '../abstract/' as *;
+
+.scroll-top {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    width: 56px;
+    height: 56px;
+    border: 2px solid $secondary-color;
+    border-radius: 50%;
+    background: rgba($secondary-color, .85);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        visibility .3s ease,
+        border-color .2s ease;
+
+    z-index: 1000;
+
+    svg {
+        width: 24px;
+        height: 24px;
+
+        path {
+            fill: none;
+            stroke: rgba(0, 0, 0, 0.7);
+            stroke-width: 2.5;
+            transition: stroke .2s ease;
+        }
+    }
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &:hover {
+        transform: translateY(0) scale(1.08);
+        border-color: $secondary-color;
+
+        svg path {
+            stroke: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    &:active {
+        transform: translateY(0) scale(.98);
+    }
+
+    @include mobile {
+        width: 40px;
+        height: 40px;
+        right: 16px;
+        bottom: 16px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @include tablet {
+        width: 40px;
+        height: 40px;
+        right: 16px;
+        bottom: 16px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @include desktop {
+        width: 44px;
+        height: 44px;
+        right: 16px;
+        bottom: 16px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @include landscape {
+        width: 40px;
+        height: 40px;
+        right: 16px;
+        bottom: 16px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
