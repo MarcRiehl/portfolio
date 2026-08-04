@@ -58,6 +58,8 @@
     color: $secondary-color;
     letter-spacing: -3%;
     padding-bottom: 32px;
+        hyphens: auto;
+    overflow-wrap: break-word;
 
     @include mobile {
         font-size: 56px;

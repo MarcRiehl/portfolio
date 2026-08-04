@@ -2,6 +2,10 @@
 
 #reference {
     margin-bottom: 128px;
+
+    @include mobile{
+        margin-bottom: 64px;
+    }
 }
 
 .reference-wrapper {

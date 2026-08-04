@@ -68,14 +68,23 @@ body.dialog-open {
 
     @include landscape {
         overflow-y: auto;
-        padding-right: 8px;
         min-height: 0;
         align-items: flex-start;
+        padding: 20px 0 20px 0;
+        margin-top: 30px;
+        // margin-bottom: 0px;
+        // max-height: 230px;
+        max-height: calc(100dvh - 100px);
+        margin-right: 20px;
     }
 }
 
 .dialog-wrapper-inner::-webkit-scrollbar {
     width: 14px;
+
+    @include landscape {
+        width: 12px;
+    }
 }
 
 .dialog-wrapper-inner::-webkit-scrollbar-track {
@@ -145,6 +154,13 @@ body.dialog-open {
 
     @include small-mobile {
         padding-bottom: 10px;
+
+    }
+
+    @include landscape {
+        position: fixed;
+        top: 0;
+        right: 20px;
     }
 }
 
@@ -163,6 +179,12 @@ body.dialog-open {
 .navigation {
     align-self: center;
     justify-self: end;
+
+    @include landscape {
+        position: fixed;
+        bottom: 10px;
+        right: 35px;
+    }
 
 
     button {
@@ -228,7 +250,13 @@ body.dialog-open {
     color: $secondary-color;
     letter-spacing: -2%;
 
-    @include mobile-tablet {
+    @include mobile {
+        font-size: 56px;
+        padding-top: 10px;
+    }
+
+
+    @include tablet {
         font-size: 72px;
         padding-top: 20px;
     }
@@ -251,7 +279,12 @@ body.dialog-open {
     line-height: 80%;
     letter-spacing: -3%;
 
-    @include mobile-tablet {
+    @include mobile {
+        font-size: 48px;
+    }
+
+
+    @include tablet {
         font-size: 56px;
     }
 
@@ -272,7 +305,12 @@ body.dialog-open {
     color: $secondary-color;
     padding: 24px 0 16px 0;
 
-    @include mobile-tablet {
+    @include mobile {
+        font-size: 18px;
+        padding: 20px 0 16px 0;
+    }
+
+    @include tablet {
         font-size: 20px;
     }
 
@@ -283,9 +321,6 @@ body.dialog-open {
     @include small-mobile {
         font-size: 20px;
     }
-
-
-
 }
 
 .dialog-description {
@@ -308,9 +343,23 @@ body.dialog-open {
     padding: 16px 0;
     min-width: 520px;
 
-    @include mobile-tablet {
+    @include mobile {
         flex-wrap: wrap;
         min-width: 0px;
+        padding: 8px 0;
+        min-height: 90px;
+    }
+
+    @include tablet {
+        flex-wrap: wrap;
+        min-width: 0px;
+    }
+
+    @include landscape {
+        flex-wrap: wrap;
+        min-width: 0px;
+        padding: 8px 0;
+
     }
 }
 
@@ -319,14 +368,20 @@ body.dialog-open {
     display: flex;
     gap: 24px;
 
-    @include mobile-tablet {
+    @include mobile {
+        padding: 16px 0 10px 0;
+        gap: 20px;
+        justify-content: center;
+
+    }
+
+    @include tablet {
         gap: 20px;
         justify-content: center;
     }
 }
 
 .dialog-list-technologie {
-
     display: flex;
     align-items: center;
     padding-top: 16px;
@@ -353,7 +408,6 @@ body.dialog-open {
     display: flex;
     align-items: center;
     justify-content: center;
-
     min-height: 0;
     min-width: 0;
 
@@ -369,8 +423,8 @@ body.dialog-open {
     object-fit: contain;
 
     @include mobile {
-        width: 100%;
-        height: 100%;
+        width: 75%;
+        height: 75%;
     }
 
     @include tablet {
@@ -393,8 +447,8 @@ body.dialog-open {
     }
 
     @include landscape {
-        width: 100%;
-        height: 100%;
-        max-height: 160px;
+        width: 90%;
+        height: 90%;
+        max-height: 200px;
     }
 }
