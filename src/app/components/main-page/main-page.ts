@@ -1,4 +1,4 @@
-import { Component, AfterViewInit  } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Header } from '../header/header';
 import { AboutMe } from '../about-me/about-me';
 import { SkillSets } from '../skill-set/skill-set';
@@ -14,9 +14,9 @@ import * as AOS from 'aos';
   templateUrl: './main-page.html',
   styleUrl: './main-page.scss',
 })
-export class MainPage implements AfterViewInit {
+export class MainPage implements OnInit {
 
- ngAfterViewInit(): void {
+  ngOnInit(): void {
     AOS.init({
       duration: 1000,
       once: false,
