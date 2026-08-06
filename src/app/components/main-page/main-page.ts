@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit  } from '@angular/core';
 import { Header } from '../header/header';
 import { AboutMe } from '../about-me/about-me';
 import { SkillSets } from '../skill-set/skill-set';
 import { FeaturedProjects } from '../featured-projects/featured-projects';
 import { References } from '../reference/reference';
 import { Contact } from '../contact/contact';
-
+import AOS from 'aos';
 
 
 @Component({
@@ -14,4 +14,12 @@ import { Contact } from '../contact/contact';
   templateUrl: './main-page.html',
   styleUrl: './main-page.scss',
 })
-export class MainPage {}
+export class MainPage implements AfterViewInit {
+
+ ngAfterViewInit(): void {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }
+}

@@ -104,6 +104,19 @@
         }
     }
 
+        @include desktop-l {
+        width: 44px;
+        height: 44px;
+        right: 16px;
+        bottom: 16px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+
     @include landscape {
         width: 40px;
         height: 40px;

@@ -5,6 +5,7 @@ import { TopMenu } from "./layout/top-menu/top-menu";
 import { ScrollTop } from "./components/scroll-top/scroll-top";
 
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Footer, TopMenu, ScrollTop],
