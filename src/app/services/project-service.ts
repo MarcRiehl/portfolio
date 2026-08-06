@@ -12,9 +12,9 @@ export class ProjectService {
       title: 'Join',
       shortDescription: 'Jump & Run Game',
       description: 'portfolio.modal.description-join',
-      previewImage: './assets/img/projects/projects-img/join.png',
-      url: '',
-      github: '',
+      previewImage: './assets/img/projects/projects-img/join.jpg',
+      url: 'https://join.marc-riehl.de',
+      github: 'https://github.com/MarcRiehl/join/',
       technologies: [
         {
           name: 'HTML',

@@ -29,6 +29,14 @@
 
     z-index: 1000;
 
+    @include big-screen{
+        right: 300px;
+    }
+
+        @include widesscreen-plus{
+        right: 800px;
+    }
+
     svg {
         width: 24px;
         height: 24px;

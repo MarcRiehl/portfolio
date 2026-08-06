@@ -182,6 +182,9 @@
         height: 120px;
     }
 
+    @include landscape-pro {
+        height: 120px;
+    }
 
 }
 
@@ -250,6 +253,11 @@
     }
 
     @include landscape {
+        height: 120px;
+    }
+
+
+    @include landscape-pro {
         height: 120px;
     }
 }
