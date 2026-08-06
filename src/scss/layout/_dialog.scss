@@ -86,7 +86,6 @@ body.dialog-open {
 
     @include landscape-pro {
         min-height: 0;
-        // padding: 20px 0 10px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -107,13 +106,13 @@ body.dialog-open {
 
     @include landscape {
         overflow-y: auto;
-        max-height: 50dvh;
+        max-height: 49dvh;
         width: 90%;
     }
 
     @include landscape-pro {
         overflow-y: auto;
-        max-height: 41dvh;
+        max-height: 44dvh;
         width: 90%;
     }
 
@@ -225,6 +224,10 @@ body.dialog-open {
         position: fixed;
         top: 0;
         right: 20px;
+    }
+
+    @include landscape-pro {
+        padding-bottom: 0px;
     }
 }
 
