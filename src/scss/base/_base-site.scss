@@ -196,4 +196,8 @@ h1 {
         font-size: 62px;
     }
 
+    @include landscape-pro {
+        font-size: 62px;
+    }
+
 }

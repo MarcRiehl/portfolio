@@ -21,7 +21,6 @@
     flex-direction: column;
     align-self: center;
     align-items: center;
-
 }
 
 .header-subline {
@@ -34,6 +33,9 @@
     }
 
     @include tablet {
+        font-size: 24px;
+    }
+        @include landscape-pro {
         font-size: 24px;
     }
 }
@@ -53,6 +55,11 @@
     }
 
     @include landscape {
+        margin-top: 10px;
+        gap: 20px;
+    }
+
+       @include landscape-pro {
         margin-top: 10px;
         gap: 20px;
     }
@@ -183,7 +190,7 @@
     }
 
     @include landscape-pro {
-        height: 120px;
+        height: 160px;
     }
 
 }
@@ -258,7 +265,7 @@
 
 
     @include landscape-pro {
-        height: 120px;
+        height: 140px;
     }
 }
 
@@ -303,6 +310,25 @@
         }
     }
 }
+
+@include landscape-pro {
+    .icon-mail {
+        font-size: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 28px;
+            height: 28px;
+            background: url("/assets/img/header/mail.svg") center/contain no-repeat;
+        }
+
+        &:hover:before {
+            background: url("/assets/img/header/mail-press.svg") center/contain no-repeat;
+        }
+    }
+}
+
 
 .header-right-mail a {
     color: $primary-color;

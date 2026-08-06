@@ -33,6 +33,11 @@
         transform: translateY(-15px) rotate(-3deg);
     }
 
+        @include landscape-pro {
+        padding: 3px 16px;
+        transform: translateY(-24px) rotate(-3deg);
+    }
+
 }
 
 .slider::before {
@@ -67,6 +72,12 @@
     color: $secondary-color;
 
     @include mobile {
+       font-size: 24px; 
+    }
+        @include landscape {
+       font-size: 24px; 
+    }
+            @include landscape-pro {
        font-size: 24px; 
     }
 }
