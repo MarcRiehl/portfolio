@@ -5,7 +5,7 @@ import { SkillSets } from '../skill-set/skill-set';
 import { FeaturedProjects } from '../featured-projects/featured-projects';
 import { References } from '../reference/reference';
 import { Contact } from '../contact/contact';
-import AOS from 'aos';
+import * as AOS from 'aos';
 
 
 @Component({
