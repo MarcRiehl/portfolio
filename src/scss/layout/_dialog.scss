@@ -101,7 +101,7 @@ body.dialog-open {
 
     @include small-mobile {
         overflow-y: auto;
-        max-height: 45dvh;
+        max-height: 48dvh;
     }
 
     @include landscape {
@@ -120,31 +120,35 @@ body.dialog-open {
         max-height: fit-content;
         overflow-y: visible;
     }
-}
 
-.dialog-scroll::-webkit-scrollbar {
-    width: 14px;
-
-    @include landscape {
+    &::-webkit-scrollbar {
         width: 12px;
+
+        @include landscape {
+            width: 12px;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $primary-bg-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $secondary-color;
+        border-radius: 6px;
+        border: 4px solid $primary-bg-color;
+        background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: darken($secondary-color, 10%);
     }
 }
 
-.dialog-scroll::-webkit-scrollbar-track {
-    background: $primary-bg-color;
-}
-
-.dialog-scroll::-webkit-scrollbar-thumb {
-    background: $secondary-color;
-    border-radius: 6px;
-    border: 4px solid $primary-bg-color;
-    background-clip: content-box;
-}
-
-.dialog-scroll::-webkit-scrollbar-thumb:hover {
-    background: $secondary-color;
-}
-
+// .dialog-scroll {
+//     scrollbar-width: thin;
+//     scrollbar-color: $secondary-color $primary-bg-color;
+// }
 
 .backdrop {
     position: fixed;
@@ -190,7 +194,7 @@ body.dialog-open {
     @include landscape-pro {
         height: 100dvh;
         width: 95dvw;
-        padding: 20px 20px;
+        padding: 10px 20px;
     }
 
     @include small-mobile-high {
